@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[test]]></title>
-    <url>%2F2017%2F12%2F04%2Ftest%2F</url>
-    <content type="text"><![CDATA[123]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[剑指Offer第二题]]></title>
     <url>%2F2017%2F12%2F04%2F%E5%89%91%E6%8C%87-2%2F</url>
     <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 第二题：替换空格请实现一个函数，将一个字符串中的空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。 JS中有一项非常强大的利器：正则，其中有专门对应空格的匹配，和替换的方法replace。1234567function replaceSpace(str)&#123; // write code here let reg = /\s/g str = str.replace(reg, &quot;%20&quot;) return str&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
