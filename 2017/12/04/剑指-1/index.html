@@ -137,7 +137,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/calc/剑指_1.png">
 <meta property="og:image" content="http://yoursite.com/images/结尾.gif">
-<meta property="og:updated_time" content="2017-12-04T14:10:58.908Z">
+<meta property="og:updated_time" content="2017-12-04T14:34:56.713Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="剑指Offer第一题">
 <meta name="twitter:description" content="前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。  第一题：二维数组中的查找在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。  一个二维数组并且内部排序是有序的，并且从左向右和从上至下都是递增的，那么也就是说每一行的最右边的元素会是最大的，此时只要拿这个数去与t">
@@ -468,7 +468,7 @@
 <ul>
 <li>假设target为5，我们从这个二维数组的第一行的最右边(a15)去与target作比较，那么a15 &gt; 5，所以当前行往前推，a14 &gt; 5，再往前，直到a12 &lt; 5，所以要换一行，也就是b12与target作比较，这样往复去比较，就能知道这个二维数组中是否有target了。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function Find(target, array)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    let i = 0;</span><br><span class="line">    let j = array[i].length - 1;</span><br><span class="line">    while(i&lt;array.length &amp;&amp; j&gt;=0) &#123;</span><br><span class="line">        if(array[i][j] &gt; target) &#123;</span><br><span class="line">            j--;</span><br><span class="line">        &#125;else if(array[i][j] &lt; target) &#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;else &#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;   </span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function Find(target, array)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    let i = 0</span><br><span class="line">    let j = array[i].length - 1</span><br><span class="line">    while(i&lt;array.length &amp;&amp; j&gt;=0) &#123;</span><br><span class="line">        if(array[i][j] &gt; target) &#123;</span><br><span class="line">            j--</span><br><span class="line">        &#125;else if(array[i][j] &lt; target) &#123;</span><br><span class="line">            i++</span><br><span class="line">        &#125;else &#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;   </span><br><span class="line">    &#125;</span><br><span class="line">    return false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <h1 id="如有帮助，请收藏本博客，谢谢！"><a href="#如有帮助，请收藏本博客，谢谢！" class="headerlink" title="如有帮助，请收藏本博客，谢谢！"></a><strong>如有帮助，请收藏本博客，谢谢！</strong></h1><p><img src="/images/结尾.gif" alt=""></p>
 
@@ -512,6 +512,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/04/剑指-2/" rel="prev" title="剑指Offer第二题">
+                剑指Offer第二题 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -608,7 +612,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

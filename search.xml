@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[剑指Offer第二题]]></title>
+    <url>%2F2017%2F12%2F04%2F%E5%89%91%E6%8C%87-2%2F</url>
+    <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 第二题：替换空格请实现一个函数，将一个字符串中的空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。 JS中有一项非常强大的利器：正则，其中有专门对应空格的匹配，和替换的方法replace。1234567function replaceSpace(str)&#123; // write code here let reg = /\s/g str = str.replace(reg, &quot;%20&quot;) return str&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
+      <categories>
+        <category>剑指Offer系列</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[剑指Offer第一题]]></title>
     <url>%2F2017%2F12%2F04%2F%E5%89%91%E6%8C%87-1%2F</url>
-    <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 第一题：二维数组中的查找在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。 一个二维数组并且内部排序是有序的，并且从左向右和从上至下都是递增的，那么也就是说每一行的最右边的元素会是最大的，此时只要拿这个数去与target作比较，就能去判断我下一步应该是换行，还是该在当前行去往前推，再去与target作比较，如此往复，就能去判断这个二维数组内部是否有target了。这种优势就是我没必要去遍历整个数组，节省很大的时间。说了这么多，还是上图比较容易理解，下面举例。 假设target为5，我们从这个二维数组的第一行的最右边(a15)去与target作比较，那么a15 &gt; 5，所以当前行往前推，a14 &gt; 5，再往前，直到a12 &lt; 5，所以要换一行，也就是b12与target作比较，这样往复去比较，就能知道这个二维数组中是否有target了。 12345678910111213141516function Find(target, array)&#123; // write code here let i = 0; let j = array[i].length - 1; while(i&lt;array.length &amp;&amp; j&gt;=0) &#123; if(array[i][j] &gt; target) &#123; j--; &#125;else if(array[i][j] &lt; target) &#123; i++; &#125;else &#123; return true; &#125; &#125; return false;&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
+    <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 第一题：二维数组中的查找在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。 一个二维数组并且内部排序是有序的，并且从左向右和从上至下都是递增的，那么也就是说每一行的最右边的元素会是最大的，此时只要拿这个数去与target作比较，就能去判断我下一步应该是换行，还是该在当前行去往前推，再去与target作比较，如此往复，就能去判断这个二维数组内部是否有target了。这种优势就是我没必要去遍历整个数组，节省很大的时间。说了这么多，还是上图比较容易理解，下面举例。 假设target为5，我们从这个二维数组的第一行的最右边(a15)去与target作比较，那么a15 &gt; 5，所以当前行往前推，a14 &gt; 5，再往前，直到a12 &lt; 5，所以要换一行，也就是b12与target作比较，这样往复去比较，就能知道这个二维数组中是否有target了。 12345678910111213141516function Find(target, array)&#123; // write code here let i = 0 let j = array[i].length - 1 while(i&lt;array.length &amp;&amp; j&gt;=0) &#123; if(array[i][j] &gt; target) &#123; j-- &#125;else if(array[i][j] &lt; target) &#123; i++ &#125;else &#123; return true; &#125; &#125; return false&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
       <categories>
         <category>剑指Offer系列</category>
       </categories>
