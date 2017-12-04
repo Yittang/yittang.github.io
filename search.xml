@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[剑指Offer第一题]]></title>
+    <url>%2F2017%2F12%2F04%2F%E5%89%91%E6%8C%87-1%2F</url>
+    <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 第一题：二维数组中的查找在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。 一个二维数组并且内部排序是有序的，并且从左向右和从上至下都是递增的，那么也就是说每一行的最右边的元素会是最大的，此时只要拿这个数去与target作比较，就能去判断我下一步应该是换行，还是该在当前行去往前推，再去与target作比较，如此往复，就能去判断这个二维数组内部是否有target了。这种优势就是我没必要去遍历整个数组，节省很大的时间。说了这么多，还是上图比较容易理解，下面举例。 假设target为5，我们从这个二维数组的第一行的最右边(a15)去与target作比较，那么a15 &gt; 5，所以当前行往前推，a14 &gt; 5，再往前，直到a12 &lt; 5，所以要换一行，也就是b12与target作比较，这样往复去比较，就能知道这个二维数组中是否有target了。 12345678910111213141516function Find(target, array)&#123; // write code here let i = 0; let j = array[i].length - 1; while(i&lt;array.length &amp;&amp; j&gt;=0) &#123; if(array[i][j] &gt; target) &#123; j--; &#125;else if(array[i][j] &lt; target) &#123; i++; &#125;else &#123; return true; &#125; &#125; return false;&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
+      <categories>
+        <category>剑指Offer系列</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[初识Git与GitHub]]></title>
     <url>%2F2017%2F12%2F02%2F%E8%AE%A4%E8%AF%86Git%E4%B8%8EGitHub%2F</url>
     <content type="text"><![CDATA[前言&emsp;&emsp;GitHub 是一个面向开源及私有软件项目的托管平台，因为只支持Git作为唯一的版本库格式进行托管，故名 GitHub。 Git的安装 在使用GitHub之前首先要安装Git 具体如何安装可以看这篇 GitHub初体验在进入GitHub官网，你首先要注册一个账号(ps:这个就是你个人账户，牢记！) 既然我们都已经迈出了第一步，是不是该体验起飞的感觉了！ Github仓库的创建不急，我们先进入主页我们会看到右边有这么一个大绿色按钮 毫不犹豫的按下它吧！！！这就是你以后经常需要触碰的仓库！ 因为我勾选了自动创建README，所以界面是这样的 好了，到了这一步说明已经成功了一半，仓库建好了，那么我们怎么才能把这远程仓库能clone到我们本地呢？仔细的你一定看到了又出现了一个大绿色按钮，没错，这就是我们的主角！点开它，你会发现右上角有个Use SSH(这是个切换按钮，记得切换到SSH) 那么问题来了，SSH是啥？我没有这玩意儿啊，该怎么办？不慌！这时候该我们的Git登场了！(blingbling滑稽) Git初体验 首先打开我们的Git Bash (安装成功) 因为Git是分布式版本控制系统，所以需要填写用户名和邮箱作为一个标识。 然后我们可以查看我们电脑中是否已经存在过ssh，打下面两条命令就能看到，我已经安装过，所以显示存在，没有安装是显示不存在的。 接下来我们安装SSH ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;(记得替换你自己的邮箱),把这句代码输进Git中，它先要求你确认保存公钥的位置（.ssh/id_rsa），然后它会让你重复一个密码两次，如果不想在使用公钥的时候输入密码，可以留空，一直按回车结束，就成功了。 现在只需要我们去ssh目录下的id_rsa.pub中的钥匙给复制出来然后粘贴到GitHub的SSH中就行了 回到GitHub中，点击我们的头像，然后下面会出现一个Settings。 如图点击New SSH key 好了，现在完成了我们的SSH创建，接下来我们就能clone我们的仓库到本地啦！ Clone仓库到本地 回到我们的clone按钮，切换到SSH，并且复制这段地址 选好你想放仓库的文件夹位置，并且右键点git bash here，输入git clone git@github.com:xxx/test.git(后面改成你们的地址哦) 然后静等仓库clone下来，然后就能愉快的玩耍GitHub啦！]]></content>
