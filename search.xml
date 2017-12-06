@@ -1,45 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[剑指Offer第三题]]></title>
+    <title><![CDATA[剑指Offer第四题：重建二叉树]]></title>
+    <url>%2F2017%2F12%2F06%2F%E5%89%91%E6%8C%87-4%2F</url>
+    <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 重建二叉树输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。 请先了解什么叫二叉树 因为输入的是前序序列和中序序列，那么我们能直接通过前序序列知道二叉树的根节点，然后通过中序序列直接知道二叉树的左子树(此记为中左子树)和右子树(此记为中右子树)有哪些节点。这样我们就能通过中左子树来得到前序序列中的左子树(记为前左子树)和右子树(记为前右子树)。然后通过递归思想，我们把前左子树传入当作新前序序列，中左子树当作新中序序列，来得到左子树的头结点和左子树包含的哪些节点，以此递归下去，右子树也是一样的思想。1234567891011121314151617181920212223/* function TreeNode(x) &#123; this.val = x; this.left = null; this.right = null;&#125; */function reConstructBinaryTree(pre, vin)&#123; // write code here if(!pre.length || !vin.length) &#123; return false &#125; const val = pre[0] //根节点 const index = vin.indexOf(val) //根节点在右子树的index位置 let preLeft = pre.slice(1, index+1) //前左子树 let preRight = pre.slice(index+1) //前右子树 let vinLeft = vin.slice(0, index) //中左子树 let vinRight = vin.slice(index+1) //中右子树 return &#123; val: val, left: reConstructBinaryTree(preLeft, vinLeft), right: reConstructBinaryTree(preRight, vinRight) &#125;&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
+      <categories>
+        <category>剑指Offer系列</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>算法</tag>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[剑指Offer第三题：从尾到头打印链表]]></title>
     <url>%2F2017%2F12%2F05%2F%E5%89%91%E6%8C%87-3%2F</url>
-    <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 第三题：从尾到头打印链表输入一个链表，从尾到头打印链表每个节点的值。 什么叫链表，如果不清楚的可以先去了解下，接下来直接进入正题！ 题目：反向打印链表的所有节点。因为链表中每个节点包含的是本身节点的信息(value)和指向下一节点的指针，所以我们需要获取的就是这个value，但是要遍历所有节点，所以我们不可避免的需要用到这个指针。那么我们该如何反向输出整个链表呢？这时候链表的表亲=&gt;数组登场了，JS数组的API非常强大，本身属性方法中就有push、pop、unshift、shift等操作数组方法。既然题目要反向输出，而且链表是从头指向下一级，直到为null才结束，所以我们只要每次取到一个链表节点的时候，把它从数组的头部放入，也就是栈的思想，后进节点的永远在最前面，那么这样数组中就保存了整个反向链表，直接就能输出了！1234567891011121314/*function ListNode(x)&#123; this.val = x; this.next = null;&#125;*/function printListFromTailToHead(head)&#123; // write code here let arr = [] while(head) &#123; arr.unshift(head.val) head = head.next &#125; return arr&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
+    <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 从尾到头打印链表输入一个链表，从尾到头打印链表每个节点的值。 什么叫链表，如果不清楚的可以先去了解下，接下来直接进入正题！ 题目：反向打印链表的所有节点。因为链表中每个节点包含的是本身节点的信息(value)和指向下一节点的指针，所以我们需要获取的就是这个value，但是要遍历所有节点，所以我们不可避免的需要用到这个指针。那么我们该如何反向输出整个链表呢？这时候链表的表亲=&gt;数组登场了，JS数组的API非常强大，本身属性方法中就有push、pop、unshift、shift等操作数组方法。既然题目要反向输出，而且链表是从头指向下一级，直到为null才结束，所以我们只要每次取到一个链表节点的时候，把它从数组的头部放入，也就是栈的思想，后进节点的永远在最前面，那么这样数组中就保存了整个反向链表，直接就能输出了！1234567891011121314/*function ListNode(x)&#123; this.val = x; this.next = null;&#125;*/function printListFromTailToHead(head)&#123; // write code here let arr = [] while(head) &#123; arr.unshift(head.val) head = head.next &#125; return arr&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
       <categories>
         <category>剑指Offer系列</category>
       </categories>
       <tags>
         <tag>JS</tag>
         <tag>算法</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[剑指Offer第二题]]></title>
+    <title><![CDATA[剑指Offer第二题：替换空格]]></title>
     <url>%2F2017%2F12%2F04%2F%E5%89%91%E6%8C%87-2%2F</url>
-    <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 第二题：替换空格请实现一个函数，将一个字符串中的空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。 JS中有一项非常强大的利器：正则，其中有专门对应空格的匹配，和替换的方法replace。1234567function replaceSpace(str)&#123; // write code here let reg = /\s/g str = str.replace(reg, &quot;%20&quot;) return str&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
+    <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 替换空格请实现一个函数，将一个字符串中的空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。 JS中有一项非常强大的利器：正则，其中有专门对应空格的匹配，和替换的方法replace。1234567function replaceSpace(str)&#123; // write code here let reg = /\s/g str = str.replace(reg, &quot;%20&quot;) return str&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
       <categories>
         <category>剑指Offer系列</category>
       </categories>
       <tags>
         <tag>JS</tag>
         <tag>算法</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[剑指Offer第一题]]></title>
+    <title><![CDATA[剑指Offer第一题：二维数组中的查找]]></title>
     <url>%2F2017%2F12%2F04%2F%E5%89%91%E6%8C%87-1%2F</url>
-    <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 第一题：二维数组中的查找在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。 一个二维数组并且内部排序是有序的，并且从左向右和从上至下都是递增的，那么也就是说每一行的最右边的元素会是最大的，此时只要拿这个数去与target作比较，就能去判断我下一步应该是换行，还是该在当前行去往前推，再去与target作比较，如此往复，就能去判断这个二维数组内部是否有target了。这种优势就是我没必要去遍历整个数组，节省很大的时间。说了这么多，还是上图比较容易理解，下面举例。 假设target为5，我们从这个二维数组的第一行的最右边(a15)去与target作比较，那么a15 &gt; 5，所以当前行往前推，a14 &gt; 5，再往前，直到a12 &lt; 5，所以要换一行，也就是b12与target作比较，这样往复去比较，就能知道这个二维数组中是否有target了。 12345678910111213141516function Find(target, array)&#123; // write code here let i = 0 let j = array[i].length - 1 while(i&lt;array.length &amp;&amp; j&gt;=0) &#123; if(array[i][j] &gt; target) &#123; j-- &#125;else if(array[i][j] &lt; target) &#123; i++ &#125;else &#123; return true; &#125; &#125; return false&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
+    <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 二维数组中的查找在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。 一个二维数组并且内部排序是有序的，并且从左向右和从上至下都是递增的，那么也就是说每一行的最右边的元素会是最大的，此时只要拿这个数去与target作比较，就能去判断我下一步应该是换行，还是该在当前行去往前推，再去与target作比较，如此往复，就能去判断这个二维数组内部是否有target了。这种优势就是我没必要去遍历整个数组，节省很大的时间。说了这么多，还是上图比较容易理解，下面举例。 假设target为5，我们从这个二维数组的第一行的最右边(a15)去与target作比较，那么a15 &gt; 5，所以当前行往前推，a14 &gt; 5，再往前，直到a12 &lt; 5，所以要换一行，也就是b12与target作比较，这样往复去比较，就能知道这个二维数组中是否有target了。 12345678910111213141516function Find(target, array)&#123; // write code here let i = 0 let j = array[i].length - 1 while(i&lt;array.length &amp;&amp; j&gt;=0) &#123; if(array[i][j] &gt; target) &#123; j-- &#125;else if(array[i][j] &lt; target) &#123; i++ &#125;else &#123; return true; &#125; &#125; return false&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
       <categories>
         <category>剑指Offer系列</category>
       </categories>
       <tags>
         <tag>JS</tag>
         <tag>算法</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[初识Git与GitHub]]></title>
     <url>%2F2017%2F12%2F02%2F%E8%AE%A4%E8%AF%86Git%E4%B8%8EGitHub%2F</url>
-    <content type="text"><![CDATA[前言&emsp;&emsp;GitHub 是一个面向开源及私有软件项目的托管平台，因为只支持Git作为唯一的版本库格式进行托管，故名 GitHub。 Git的安装 在使用GitHub之前首先要安装Git 具体如何安装可以看这篇 GitHub初体验在进入GitHub官网，你首先要注册一个账号(ps:这个就是你个人账户，牢记！) 既然我们都已经迈出了第一步，是不是该体验起飞的感觉了！ Github仓库的创建不急，我们先进入主页我们会看到右边有这么一个大绿色按钮 毫不犹豫的按下它吧！！！这就是你以后经常需要触碰的仓库！ 因为我勾选了自动创建README，所以界面是这样的 好了，到了这一步说明已经成功了一半，仓库建好了，那么我们怎么才能把这远程仓库能clone到我们本地呢？仔细的你一定看到了又出现了一个大绿色按钮，没错，这就是我们的主角！点开它，你会发现右上角有个Use SSH(这是个切换按钮，记得切换到SSH) 那么问题来了，SSH是啥？我没有这玩意儿啊，该怎么办？不慌！这时候该我们的Git登场了！(blingbling滑稽) Git初体验 首先打开我们的Git Bash (安装成功) 因为Git是分布式版本控制系统，所以需要填写用户名和邮箱作为一个标识。 然后我们可以查看我们电脑中是否已经存在过ssh，打下面两条命令就能看到，我已经安装过，所以显示存在，没有安装是显示不存在的。 接下来我们安装SSH ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;(记得替换你自己的邮箱),把这句代码输进Git中，它先要求你确认保存公钥的位置（.ssh/id_rsa），然后它会让你重复一个密码两次，如果不想在使用公钥的时候输入密码，可以留空，一直按回车结束，就成功了。 现在只需要我们去ssh目录下的id_rsa.pub中的钥匙给复制出来然后粘贴到GitHub的SSH中就行了 回到GitHub中，点击我们的头像，然后下面会出现一个Settings。 如图点击New SSH key 好了，现在完成了我们的SSH创建，接下来我们就能clone我们的仓库到本地啦！ Clone仓库到本地 回到我们的clone按钮，切换到SSH，并且复制这段地址 选好你想放仓库的文件夹位置，并且右键点git bash here，输入git clone git@github.com:xxx/test.git(后面改成你们的地址哦) 然后静等仓库clone下来，然后就能愉快的玩耍GitHub啦！]]></content>
+    <content type="text"><![CDATA[前言&emsp;&emsp;GitHub 是一个面向开源及私有软件项目的托管平台，因为只支持Git作为唯一的版本库格式进行托管，故名 GitHub。 Git的安装 安装Node.js 在使用GitHub之前首先要安装Git 具体如何安装可以看这篇 GitHub初体验在进入GitHub官网，你首先要注册一个账号(ps:这个就是你个人账户，牢记！) 既然我们都已经迈出了第一步，是不是该体验起飞的感觉了！ Github仓库的创建不急，我们先进入主页我们会看到右边有这么一个大绿色按钮 毫不犹豫的按下它吧！！！这就是你以后经常需要触碰的仓库！ 因为我勾选了自动创建README，所以界面是这样的 好了，到了这一步说明已经成功了一半，仓库建好了，那么我们怎么才能把这远程仓库能clone到我们本地呢？仔细的你一定看到了又出现了一个大绿色按钮，没错，这就是我们的主角！点开它，你会发现右上角有个Use SSH(这是个切换按钮，记得切换到SSH) 那么问题来了，SSH是啥？我没有这玩意儿啊，该怎么办？不慌！这时候该我们的Git登场了！(blingbling滑稽) Git初体验 首先打开我们的Git Bash (安装成功) 因为Git是分布式版本控制系统，所以需要填写用户名和邮箱作为一个标识。 然后我们可以查看我们电脑中是否已经存在过ssh，打下面两条命令就能看到，我已经安装过，所以显示存在，没有安装是显示不存在的。 接下来我们安装SSH ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;(记得替换你自己的邮箱),把这句代码输进Git中，它先要求你确认保存公钥的位置（.ssh/id_rsa），然后它会让你重复一个密码两次，如果不想在使用公钥的时候输入密码，可以留空，一直按回车结束，就成功了。 现在只需要我们去ssh目录下的id_rsa.pub中的钥匙给复制出来然后粘贴到GitHub的SSH中就行了 回到GitHub中，点击我们的头像，然后下面会出现一个Settings。 如图点击New SSH key 好了，现在完成了我们的SSH创建，接下来我们就能clone我们的仓库到本地啦！ Clone仓库到本地 回到我们的clone按钮，切换到SSH，并且复制这段地址 选好你想放仓库的文件夹位置，并且右键点git bash here，输入git clone git@github.com:xxx/test.git(后面改成你们的地址哦) 然后静等仓库clone下来，然后就能愉快的玩耍GitHub啦！]]></content>
       <categories>
         <category>GitHub系列</category>
       </categories>
