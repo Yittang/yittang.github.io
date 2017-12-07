@@ -114,7 +114,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JS,算法,数据结构," />
 
 
 
@@ -127,17 +127,20 @@
 
 
 
-<meta name="description" content="爱好游戏的码农">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta name="description" content="前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。  用两个栈实现队列用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型  队列跟栈稍微有点不同,是只允许在一端进行插入操作，在另一端进行删除操作的线性表。但从其字面意思上就能猜到跟我们日常生活中排队一样，谁先进的队伍谁在">
+<meta name="keywords" content="JS,算法,数据结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="剑指Offer第五题：用两个栈实现队列">
+<meta property="og:url" content="http://yoursite.com/2017/12/07/剑指-5/index.html">
 <meta property="og:site_name" content="Yittang">
-<meta property="og:description" content="爱好游戏的码农">
+<meta property="og:description" content="前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。  用两个栈实现队列用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型  队列跟栈稍微有点不同,是只允许在一端进行插入操作，在另一端进行删除操作的线性表。但从其字面意思上就能猜到跟我们日常生活中排队一样，谁先进的队伍谁在前面，也就会先出去。所以队列的意义就是：先进先出，从尾部进入，从头部出去。所以，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-02T07:51:12.498Z">
+<meta property="og:image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg">
+<meta property="og:updated_time" content="2017-12-07T13:03:09.332Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
-<meta name="twitter:description" content="爱好游戏的码农">
+<meta name="twitter:title" content="剑指Offer第五题：用两个栈实现队列">
+<meta name="twitter:description" content="前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。  用两个栈实现队列用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型  队列跟栈稍微有点不同,是只允许在一端进行插入操作，在另一端进行删除操作的线性表。但从其字面意思上就能猜到跟我们日常生活中排队一样，谁先进的队伍谁在前面，也就会先出去。所以队列的意义就是：先进先出，从尾部进入，从头部出去。所以，">
+<meta name="twitter:image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg">
 
 
 
@@ -167,13 +170,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/07/剑指-5/"/>
 
 
 
 
 
-  <title>categories | Yittang</title>
+  <title>剑指Offer第五题：用两个栈实现队列 | Yittang</title>
   
 
 
@@ -342,40 +345,195 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/07/剑指-5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yittang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/34141810.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yittang">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">categories</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                目前共计 2 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/GitHub系列/">GitHub系列</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/剑指Offer系列/">剑指Offer系列</a><span class="category-list-count">5</span></li></ul>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">剑指Offer第五题：用两个栈实现队列</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-07T20:20:52+08:00">
+                2017-12-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/剑指Offer系列/" itemprop="url" rel="index">
+                    <span itemprop="name">剑指Offer系列</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/07/剑指-5/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/12/07/剑指-5/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h3 id="此系列为牛客网剑指Offer系列。"><a href="#此系列为牛客网剑指Offer系列。" class="headerlink" title="此系列为牛客网剑指Offer系列。"></a><strong>此系列为<a href="https://www.nowcoder.com/ta/coding-interviews" target="_blank" rel="noopener">牛客网剑指Offer系列</a>。</strong></h3><p>撰写此博文只为记录点滴与总结。</p>
+<hr>
+<h1 id="用两个栈实现队列"><a href="#用两个栈实现队列" class="headerlink" title="用两个栈实现队列"></a>用两个栈实现队列</h1><p>用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型</p>
+<ul>
+<li><strong><a href="https://www.cnblogs.com/VitoCorleone/archive/2014/06/12/3784468.html" target="_blank" rel="noopener">队列</a>跟栈稍微有点不同,是只允许在一端进行插入操作，在另一端进行删除操作的线性表。但从其字面意思上就能猜到跟我们日常生活中排队一样，谁先进的队伍谁在前面，也就会先出去。所以队列的意义就是：先进先出，从尾部进入，从头部出去。所以，我们这里又可以愉快的用到JS数组的方法了，不清楚js数组的方法的可以看<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="noopener">mdn</a>。言归正传，数组常用的方法push就是将一个或多个元素添加到数组的末尾，shift就是从数组中删除第一个元素。这不就是我们需要的队列的方法么？好了接下来一切都简单了。我们只需要一个模拟的栈用push，另一个用来pop。</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">let stackA = [],</span><br><span class="line">    stackB = []</span><br><span class="line">function push(node)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    stackA.push(node)</span><br><span class="line">&#125;</span><br><span class="line">function pop()</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    stackB = stackA.shift()</span><br><span class="line">    return stackB</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h1 id="如有帮助，请收藏本博客，谢谢！"><a href="#如有帮助，请收藏本博客，谢谢！" class="headerlink" title="如有帮助，请收藏本博客，谢谢！"></a><strong>如有帮助，请收藏本博客，谢谢！</strong></h1><p><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg" alt=""></p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JS/" rel="tag"># JS</a>
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/06/剑指-4/" rel="next" title="剑指Offer第四题：重建二叉树">
+                <i class="fa fa-chevron-left"></i> 剑指Offer第四题：重建二叉树
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
   </div>
 
 
@@ -384,6 +542,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -404,8 +576,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -486,6 +667,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#此系列为牛客网剑指Offer系列。"><span class="nav-number">1.0.1.</span> <span class="nav-text">此系列为牛客网剑指Offer系列。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用两个栈实现队列"><span class="nav-number">2.</span> <span class="nav-text">用两个栈实现队列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如有帮助，请收藏本博客，谢谢！"><span class="nav-number">3.</span> <span class="nav-text">如有帮助，请收藏本博客，谢谢！</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -667,6 +864,18 @@
       <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/12/07/剑指-5/';
+          this.page.identifier = '2017/12/07/剑指-5/';
+          this.page.title = '剑指Offer第五题：用两个栈实现队列';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   

@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[剑指Offer第五题：用两个栈实现队列]]></title>
+    <url>%2F2017%2F12%2F07%2F%E5%89%91%E6%8C%87-5%2F</url>
+    <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 用两个栈实现队列用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型 队列跟栈稍微有点不同,是只允许在一端进行插入操作，在另一端进行删除操作的线性表。但从其字面意思上就能猜到跟我们日常生活中排队一样，谁先进的队伍谁在前面，也就会先出去。所以队列的意义就是：先进先出，从尾部进入，从头部出去。所以，我们这里又可以愉快的用到JS数组的方法了，不清楚js数组的方法的可以看mdn。言归正传，数组常用的方法push就是将一个或多个元素添加到数组的末尾，shift就是从数组中删除第一个元素。这不就是我们需要的队列的方法么？好了接下来一切都简单了。我们只需要一个模拟的栈用push，另一个用来pop。12345678910111213let stackA = [], stackB = []function push(node)&#123; // write code here stackA.push(node)&#125;function pop()&#123; // write code here stackB = stackA.shift() return stackB&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
+      <categories>
+        <category>剑指Offer系列</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>算法</tag>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[剑指Offer第四题：重建二叉树]]></title>
     <url>%2F2017%2F12%2F06%2F%E5%89%91%E6%8C%87-4%2F</url>
     <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 重建二叉树输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。 请先了解什么叫二叉树 因为输入的是前序序列和中序序列，那么我们能直接通过前序序列知道二叉树的根节点，然后通过中序序列直接知道二叉树的左子树(此记为中左子树)和右子树(此记为中右子树)有哪些节点。这样我们就能通过中左子树来得到前序序列中的左子树(记为前左子树)和右子树(记为前右子树)。然后通过递归思想，我们把前左子树传入当作新前序序列，中左子树当作新中序序列，来得到左子树的头结点和左子树包含的哪些节点，以此递归下去，右子树也是一样的思想。1234567891011121314151617181920212223/* function TreeNode(x) &#123; this.val = x; this.left = null; this.right = null;&#125; */function reConstructBinaryTree(pre, vin)&#123; // write code here if(!pre.length || !vin.length) &#123; return false &#125; const val = pre[0] //根节点 const index = vin.indexOf(val) //根节点在右子树的index位置 let preLeft = pre.slice(1, index+1) //前左子树 let preRight = pre.slice(index+1) //前右子树 let vinLeft = vin.slice(0, index) //中左子树 let vinRight = vin.slice(index+1) //中右子树 return &#123; val: val, left: reConstructBinaryTree(preLeft, vinLeft), right: reConstructBinaryTree(preRight, vinRight) &#125;&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
