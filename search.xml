@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[剑指Offer第八题：跳台阶]]></title>
+    <url>%2F2017%2F12%2F10%2F%E5%89%91%E6%8C%87-8%2F</url>
+    <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 跳台阶一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法。 题目中说明青蛙要么跳1级，要么就2级。假如只有1级台阶，那么青蛙跳的方式就是F(1)=1。如果有2级台阶，F(2)=2。如果有3级台阶，F(3)=3。假如此时青蛙要跳n级台阶，那么假设青蛙第一次跳1级，那么剩下n-1级台阶的跳法，如果第一次跳2级，那么剩下n-2级台阶的跳法，所以F(n)=F(n-1)+F(n-2)，看到这个式子是不是觉得很眼熟?对，你没看错。，它就是之前的斐波那契数列的式子。虽然这题可以用递归的方式，但用递归的方式太浪费时间，用两个变量去记录前两次的跳法，显然循环会比递归效率很多。 1234567891011121314151617181920function jumpFloor(number)&#123; // write code here if(number &lt;= 0) &#123; return false &#125;else if(number === 1) &#123; return 1 &#125;else if(number === 2) &#123; return 2 &#125; let pre = 1, next = 2, result = 0 for(let i=3; i&lt;=number; i++) &#123; result = pre + next pre = next next = result &#125; return result&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
+      <categories>
+        <category>剑指Offer系列</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>算法</tag>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[单向链表]]></title>
+    <url>%2F2017%2F12%2F09%2F%E9%93%BE%E8%A1%A8%2F</url>
+    <content type="text"><![CDATA[单向链表作为一个程序猿，我相信只要整日与代码为伍的动物，那肯定离不开数据结构这种恶心又让人爱的数学思维，那么今天我就整理了一下关于链表的知识。 何为链表？链表，即存储有序的元素的集合，是一种线性表，但不会按线性的顺序去存储数据。为什么会有链表呢？那就不得不稍微提一下我们经常接触的另一个数据结构：数组。数组的结构非常容易理解，并且能随意获取数组每一个位置的数据，但也有它不足之处，那就是从数组的头部或中间任意位置插入或删除项的成本非常高，所以链表诞生而出。(哈哈哈，各位看官看看就好，莫要太当真。)链表内每个元素不像数组一样，只是单纯的存储数据，而是每个元素都由一个存储元素本身的节点和一个指向下一个元素的指针组成。如下图所示，元素一个指向下一个，直到null为止。 链表的优点链表不像数组那样，添加一个元素时，需要移动其它元素，而是只要断开想添加的地方的指针，指向要添加的元素，再把新添加元素的指针指向原先被断开的元素，如图所示。 好了，通过以上的介绍，想必现在你的脑海里一定有了对于链表一定的概念了，那么接下来让我们来看看如何创建单向链表的。 Node类创建链表1234function Node(element) &#123; this.element = element this.next = null&#125; LinkedList类链表的方法1234567function LinkedList() &#123; this.head = null //头节点 let length = 0 //链表长度 this.append = (element) =&gt; &#123;...&#125; //链尾添加元素 this.insert = (position, element) =&gt; &#123;...&#125; //特定位置插入元素 this.removeAt = (element) =&gt; &#123;...&#125; //移除特定元素&#125; 接下来就分别看链表的方法 append12345678910111213this.append = (element) =&gt; &#123; let node = new Node(element) if(this.head === null) &#123; this.head = node &#125;else &#123; let current = this.head while(current.next) &#123; current = current.next &#125; current.next = node length++ &#125; &#125; 我们来分析下，当要向链表添加某个元素时，首先判断是否存在头节点。如果头节点为空，那么我们就把头节点指向我们创建的元素节点，那么也就是整个链表现在只有头节点。如果不为空，因为append方法是向链表的尾部添加新元素，所以我们要找到这个链表的尾部，那么什么情况下说明我们当前元素是最后一个元素？只有当最后一个元素的指针指向null的时候就是了，所以先把当前指针指向头节点，然后开始遍历整个链表直到最后一个元素，此时把最后一个元素的指针指向我们新元素即可。 insert123456789101112131415161718192021222324this.insert = (position, element) =&gt; &#123; if(position &gt;= 0 &amp;&amp; position &lt;= length) &#123; let node = new Node(element), current = this.head, //当前元素指向头节点 previous, //新元素的前一元素 index = 0 if(position === 0) &#123; //头节点位置插入新元素 node.next = current this.head = node &#125;else &#123; while(index &lt; position) &#123; previous = current current = current.next index++ &#125; previous.next = node node.next = current &#125; length++ return true &#125;else &#123; return false //位置不合理，直接返回 &#125;&#125; 首先要判断要插入新元素的位置是否在链表长度范围内，如果合理才去插入新元素。插入新元素的位置两种可能，一种在头节点，另一种在链表的中间的某一位置，因为这两种情况都要从头节点开始，所以我们把当前元素指向头节点，这样方便我们后面去遍历整个链表。先来看如果我们的新元素要插在头节点位置，那么我们的新元素的指针指向当前元素，头节点指向新元素，这就完成了头节点插入新元素。如图 如果新元素插在链表的任意位置，那么就要从头开始遍历整个链表，所以我们就要循环访问整个链表，直到当index值等于我们要插入新元素位置的值一样时，跳出循环，此时我们得到两个元素，一个previous，是新元素的前一个元素，current当前值，是新元素的后一个元素，所以只要让前一个元素指向性元素，新元素指向当前值就完成了insert方法。 removeAt12345678910111213141516171819this.removeAt = (position) =&gt; &#123; if(position &gt;= 0 &amp;&amp; position &lt; length) &#123; //删除链表的位置合理 let current = this.head, index = 0, previous if(position === 0) &#123; this.head = current.next &#125;else &#123; while(index &lt; position) &#123; previous = current current = current.next index++ &#125; previous.next = current.next length-- &#125; return current.element &#125;&#125; 任意位置删除链表的元素，其实跟insert方法非常的相似。我们先来看假如删除头元素，只要让头节点指向当前元素的下一节点就是删除了。另一种情况是任意位置删除元素，我们还是要从头开始遍历整个链表，要被删除的元素的前一元素只要指向被删除元素的下一节点也就算删除了。 好了，关于单向链表的知识点就讲到这，如有需要请自己多多去深入挖掘。:) 如有帮助，请收藏本博客，谢谢！]]></content>
+      <categories>
+        <category>链表</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[剑指Offer第七题：斐波那契数列]]></title>
+    <url>%2F2017%2F12%2F09%2F%E5%89%91%E6%8C%87-7%2F</url>
+    <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 斐波那契数列大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项。n&lt;=39 斐波那契数列，简而言之，就是这个数列就是F(0)=0，F(1)=1，F(n)=F(n-1)+F(n-2)…从第二项开始这个数列每一项都是前两项的和，所以思路也就是求前两项之和。1234567891011121314function Fibonacci(n)&#123; // write code here if(n &gt; 39 || n &lt; 0) &#123; return false &#125; let arr = [] arr[0] = 0 arr[1] = 1 for(let i=2; i&lt;=n; i++) &#123; arr[i] = arr[i-1] + arr[i-2] &#125; return arr[n] &#125; 如有帮助，请收藏本博客，谢谢！]]></content>
+      <categories>
+        <category>剑指Offer系列</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>算法</tag>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[剑指Offer第六题：旋转数组的最小数字]]></title>
     <url>%2F2017%2F12%2F08%2F%E5%89%91%E6%8C%87-6%2F</url>
     <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 旋转数组的最小数字把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。 输入一个非递减排序的数组的一个旋转，输出旋转数组的最小元素。 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。 NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。 根据题目考虑两种情况，一种数组没有元素，则返回0，另一种有元素，但是是经过旋转之后并且非递减排序的，那么此时要找到数组的最小值就不能直接获取了。这时候要获取数组的最小值虽然能通过遍历能获得，但是效率太低，所以我采用了二分法。因为题目原数组是有序的，只是经过旋转之后变的没有序，但是有一点得清除，虽然经过旋转之后没有序，但是在最小值的左边和右边都是递增型的，这时候通过数组的首值(left)中间值(mid)进行比较，当首值小于等于中间值时，说明中间值在前递增数组内，那么最小值在中间值的右边，所以此时把mid的index赋给left的index，这样再去遍历右边的数组，而不需要遍历左边的数组 ；如果首值大于中间值时，说明中间值在右边的递增数组内，那么最小值在中间值的左边，所以此时把mid的index赋给right的index，这样也就不用去遍历右边的数组。往后以此类推。 可能有点绕，还是上代码比较能让你理解。12345678910111213141516171819202122232425262728293031323334function minNumberInRotateArray(rotateArray)&#123; // write code here let len = rotateArray.length if(!len) &#123; return 0 &#125; let left = 0, right = len - 1, mid = 0 while(rotateArray[left] &gt;= rotateArray[right]) &#123; //说明数组旋转过 if(right - left == 1) &#123; //数组只有两个元素，最小值一定是第二个 mid = right break &#125; mid = Math.floor((right + left)/ 2) //首值，中间值，最后值相同只能去遍历 if (rotateArray[left] == rotateArray[mid] &amp;&amp; rotateArray[right] == rotateArray[mid]) &#123; let min = rotateArray[left] for(let i=left+1; i&lt;=right; i++) &#123; if(rotateArray[i] &lt; min) &#123; min = rotateArray[i] &#125; &#125; return min &#125; if(rotateArray[left] &lt;= rotateArray[mid]) &#123; left = mid &#125;else &#123; right = mid &#125; &#125; return rotateArray[mid]&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
