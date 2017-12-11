@@ -142,7 +142,7 @@
 <meta property="og:image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-10/8907085.jpg">
 <meta property="og:image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-10/72220608.jpg">
 <meta property="og:image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg">
-<meta property="og:updated_time" content="2017-12-10T10:47:23.181Z">
+<meta property="og:updated_time" content="2017-12-11T11:00:40.577Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单向链表">
 <meta name="twitter:description" content="单向链表作为一个程序猿，我相信只要整日与代码为伍的动物，那肯定离不开数据结构这种恶心又让人爱的数学思维，那么今天我就整理了一下关于链表的知识。 何为链表？链表，即存储有序的元素的集合，是一种线性表，但不会按线性的顺序去存储数据。为什么会有链表呢？那就不得不稍微提一下我们经常接触的另一个数据结构：数组。数组的结构非常容易理解，并且能随意获取数组每一个位置的数据，但也有它不足之处，那就是从数组的头部或">
@@ -478,7 +478,7 @@
 <h2 id="LinkedList类"><a href="#LinkedList类" class="headerlink" title="LinkedList类"></a>LinkedList类</h2><h3 id="链表的方法"><a href="#链表的方法" class="headerlink" title="链表的方法"></a>链表的方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function LinkedList() &#123;</span><br><span class="line">  this.head = null //头节点</span><br><span class="line">  let length = 0 //链表长度</span><br><span class="line">  this.append = (element) =&gt; &#123;...&#125; //链尾添加元素</span><br><span class="line">  this.insert = (position, element) =&gt; &#123;...&#125; //特定位置插入元素</span><br><span class="line">  this.removeAt = (element) =&gt; &#123;...&#125; //移除特定元素</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>接下来就分别看链表的方法</p>
-<h4 id="append"><a href="#append" class="headerlink" title="append"></a>append</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">this.append = (element) =&gt; &#123;</span><br><span class="line">    let node = new Node(element)</span><br><span class="line">    if(this.head === null) &#123;</span><br><span class="line">        this.head = node</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">        let current = this.head</span><br><span class="line">        while(current.next) &#123;</span><br><span class="line">            current = current.next</span><br><span class="line">        &#125;</span><br><span class="line">        current.next = node</span><br><span class="line">        length++</span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="append"><a href="#append" class="headerlink" title="append"></a>append</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">this.append = (element) =&gt; &#123;</span><br><span class="line">    let node = new Node(element)</span><br><span class="line">    if(this.head === null) &#123;</span><br><span class="line">        this.head = node</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">        let current = this.head</span><br><span class="line">        while(current.next) &#123;</span><br><span class="line">            current = current.next</span><br><span class="line">        &#125;</span><br><span class="line">        current.next = node</span><br><span class="line">    &#125;</span><br><span class="line">    length++  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>我们来分析下，当要向链表添加某个元素时，首先判断是否存在头节点。如果头节点为空，那么我们就把头节点指向我们创建的元素节点，那么也就是整个链表现在只有头节点。如果不为空，因为append方法是向链表的尾部添加新元素，所以我们要找到这个链表的尾部，那么什么情况下说明我们当前元素是最后一个元素？只有当最后一个元素的指针指向null的时候就是了，所以先把当前指针指向头节点，然后开始遍历整个链表直到最后一个元素，此时把最后一个元素的指针指向我们新元素即可。</strong></p>
 </li>
@@ -640,7 +640,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

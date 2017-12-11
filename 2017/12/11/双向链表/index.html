@@ -114,7 +114,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="数据结构," />
 
 
 
@@ -127,16 +127,23 @@
 
 
 
-<meta name="description" content="爱好游戏的码农">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Yittang">
-<meta property="og:url" content="http://yoursite.com/archives/2017/12/index.html">
+<meta name="description" content="双向链表上次已经整理过关于单向链表的知识点了，那么今天就来说说关于双向链表的知识吧。何为双向链表呢？它跟单向链表唯一的不同就在于，每个节点不再只是单纯的指向下一个节点了，而是指向双向，一个链向下一个节点，一个链向上一个链表，如图所示。  双向链表的优点它比链表多一个指向，就是因为单向链表在错过要取的元素，每次都要从头来">
+<meta name="keywords" content="数据结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="双向链表">
+<meta property="og:url" content="http://yoursite.com/2017/12/11/双向链表/index.html">
 <meta property="og:site_name" content="Yittang">
-<meta property="og:description" content="爱好游戏的码农">
+<meta property="og:description" content="双向链表上次已经整理过关于单向链表的知识点了，那么今天就来说说关于双向链表的知识吧。何为双向链表呢？它跟单向链表唯一的不同就在于，每个节点不再只是单纯的指向下一个节点了，而是指向双向，一个链向下一个节点，一个链向上一个链表，如图所示。  双向链表的优点它比链表多一个指向，就是因为单向链表在错过要取的元素，每次都要从头来过，所以双向链表就承载了这一使命，错过的元素不需要每次重新迭代。 Node类12">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-11/90175713.jpg">
+<meta property="og:image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-11/69405943.jpg">
+<meta property="og:image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-11/90726450.jpg">
+<meta property="og:image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg">
+<meta property="og:updated_time" content="2017-12-11T11:59:23.696Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yittang">
-<meta name="twitter:description" content="爱好游戏的码农">
+<meta name="twitter:title" content="双向链表">
+<meta name="twitter:description" content="双向链表上次已经整理过关于单向链表的知识点了，那么今天就来说说关于双向链表的知识吧。何为双向链表呢？它跟单向链表唯一的不同就在于，每个节点不再只是单纯的指向下一个节点了，而是指向双向，一个链向下一个节点，一个链向上一个链表，如图所示。  双向链表的优点它比链表多一个指向，就是因为单向链表在错过要取的元素，每次都要从头来过，所以双向链表就承载了这一使命，错过的元素不需要每次重新迭代。 Node类12">
+<meta name="twitter:image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-11/90175713.jpg">
 
 
 
@@ -166,13 +173,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2017/12/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/11/双向链表/"/>
 
 
 
 
 
-  <title>归档 | Yittang</title>
+  <title>双向链表 | Yittang</title>
   
 
 
@@ -191,7 +198,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -339,411 +346,219 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/11/双向链表/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yittang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/34141810.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yittang">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">双向链表</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-11T17:49:20+08:00">
+                2017-12-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 11 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/链表/" itemprop="url" rel="index">
+                    <span itemprop="name">链表</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/11/双向链表/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/12/11/双向链表/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/11/双向链表/" itemprop="url">
-              
-                <span itemprop="name">双向链表</span>
-              
-            </a>
-        
-      </h2>
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-11T17:49:20+08:00"
-              content="2017-12-11" >
-          12-11
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/10/剑指-8/" itemprop="url">
-              
-                <span itemprop="name">剑指Offer第八题：跳台阶</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-10T18:34:17+08:00"
-              content="2017-12-10" >
-          12-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/09/链表/" itemprop="url">
-              
-                <span itemprop="name">单向链表</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-09T18:39:19+08:00"
-              content="2017-12-09" >
-          12-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/09/剑指-7/" itemprop="url">
-              
-                <span itemprop="name">剑指Offer第七题：斐波那契数列</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-09T18:29:37+08:00"
-              content="2017-12-09" >
-          12-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h1 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h1><p>上次已经整理过关于单向链表的知识点了，那么今天就来说说关于双向链表的知识吧。<br><strong>何为双向链表呢？它跟单向链表唯一的不同就在于，每个节点不再只是单纯的指向下一个节点了，而是指向双向，一个链向下一个节点，一个链向上一个链表，如图所示。</strong></p>
+<p><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-11/90175713.jpg" alt=""></p>
+<h2 id="双向链表的优点"><a href="#双向链表的优点" class="headerlink" title="双向链表的优点"></a>双向链表的优点</h2><p>它比链表多一个指向，就是因为单向链表在错过要取的元素，每次都要从头来过，所以双向链表就承载了这一使命，错过的元素不需要每次重新迭代。</p>
+<h2 id="Node类"><a href="#Node类" class="headerlink" title="Node类"></a>Node类</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function Node(element) &#123;</span><br><span class="line">  this.element = element</span><br><span class="line">  this.pre = null //新增</span><br><span class="line">  this.next = null</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>它(this.pre)比单向链表多了一个指向前一节点的指针。</p>
+<h2 id="DoublyLinkedList类"><a href="#DoublyLinkedList类" class="headerlink" title="DoublyLinkedList类"></a>DoublyLinkedList类</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function DoublyLinkedList() &#123;</span><br><span class="line">    this.head = null</span><br><span class="line">    this.length = 0</span><br><span class="line">    this.tail = null //新增</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>它(tail)比单向链表新增了一个指向链表尾部的指针。</p>
+</li>
+</ul>
+<h3 id="双向链表的方法"><a href="#双向链表的方法" class="headerlink" title="双向链表的方法"></a>双向链表的方法</h3><h4 id="insert"><a href="#insert" class="headerlink" title="insert"></a>insert</h4><ul>
+<li>在双向链表任意位置添加元素<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">DoublyLinkedList.prototype.insert = function (position, element) &#123;</span><br><span class="line">    if(position &gt;= 0 &amp;&amp; position &lt;= this.length) &#123;</span><br><span class="line">        let node = new Node(element),</span><br><span class="line">        current = this.head,</span><br><span class="line">        previous,</span><br><span class="line">        index = 0</span><br><span class="line">        if (position === 0) &#123;</span><br><span class="line">            if (!this.head) &#123;</span><br><span class="line">                this.head = node</span><br><span class="line">                this.tail = node</span><br><span class="line">            &#125;else &#123;</span><br><span class="line">                node.next = current</span><br><span class="line">                current.pre = node</span><br><span class="line">                this.head = node</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; else if (position === this.length) &#123;</span><br><span class="line">            current = this.tail</span><br><span class="line">            current.next = node</span><br><span class="line">            node.pre = current</span><br><span class="line">            this.tail = node</span><br><span class="line">        &#125;</span><br><span class="line">        else &#123; //position !== 0</span><br><span class="line">            while (index &lt; position) &#123;</span><br><span class="line">                previous = current</span><br><span class="line">                current = current.next</span><br><span class="line">                index++</span><br><span class="line">            &#125;</span><br><span class="line">            previous.next = node</span><br><span class="line">            node.next = current</span><br><span class="line">            node.pre = previous</span><br><span class="line">            current.pre = node</span><br><span class="line">        &#125; //position !== 0</span><br><span class="line">        this.length++</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return false</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><strong>看到上面一大堆代码是不是感觉很害怕？别怕，其实双向链表的insert方法跟单向链表的没有差距很多，只是新增了一些而已。还是分情况来讨论新元素插入在链表的几种位置情况。第一种：新元素直接在头节点插入，如果头节点本身不存在，那么头节点此时就指向了新元素，此时链表只有当前的新元素，也就是最后一个元素，那么tail指向这个最后一个元素。第二种：新元素插入在链表的尾部，因为我们链表当中有个属性是指向整个链表的尾部，所以我们直接可以把当前元素指向这个tail，这样我们能直接获取链表的最后一个节点，此时添加新元素，只要把尾元素的下一指针指向新元素，新元素的前一指针指向原最后的元素，tail指向这个新元素，那么就完成了新元素插入链表尾部的事件。第三种，就是向链表的中间某一位置插入新元素，这跟单向链表的方式很类似，从头开始遍历整个链表，取到要插入位置的前一元素(previous)和当前元素(current，也是即将成为新元素的后一元素)，因为是双向链表，所以我们的previous.next指向新元素，新元素的pre指针指向previous，新元素的next指针指向current节点，current的pre指针指向新元素。最后千万别忘了，让真个链表的长度加加！</strong></li>
+</ul>
+<p><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-11/69405943.jpg" alt=""></p>
+<h4 id="removeAt"><a href="#removeAt" class="headerlink" title="removeAt"></a>removeAt</h4><ul>
+<li>在任意位置移除元素<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">DoublyLinkedList.prototype.removeAt = function(position) &#123;</span><br><span class="line">    if(position &gt;= 0 &amp;&amp; position &lt; this.length) &#123;</span><br><span class="line">        let current = this.head,</span><br><span class="line">        index = 0,</span><br><span class="line">        previous</span><br><span class="line">        if(position === 0) &#123;</span><br><span class="line">            this.head = current.next</span><br><span class="line">            if(this.length === 1) &#123;</span><br><span class="line">                this.tail = null</span><br><span class="line">            &#125;else &#123;</span><br><span class="line">                this.head.pre = null</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;else if(position === this.length-1) &#123;</span><br><span class="line">            current = this.tail</span><br><span class="line">            this.tail = current.pre</span><br><span class="line">            current.pre.next = null</span><br><span class="line">        &#125;else &#123;</span><br><span class="line">            while (index &lt; position) &#123;</span><br><span class="line">                previous = current</span><br><span class="line">                current = current.next</span><br><span class="line">                index++</span><br><span class="line">            &#125;</span><br><span class="line">            previous.next = current.next</span><br><span class="line">            current = current.next</span><br><span class="line">            current.pre = previous</span><br><span class="line">        &#125;</span><br><span class="line">        this.length--</span><br><span class="line">        return current.element</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">        return false</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><strong>如果你理解了之前的insert方法，那么对于理解removeAt方法对你来说并不会有什么太大难度。好，继续来分析这个方法。对于removeAt方法，我们还是要分情况讨论。第一种：删去头节点，很简单，只要头节点指向当前元素的下一节点就行了，但是在这里当心噢！因为可能整个链表只有这一个节点，所以如果只有这一个节点，那么要把tail给置空，如果不是，那就要把新头节点的pre属性置空。第二种情况：删去链表尾部，我们能通过tail来得到链表的最后一个节点，所以我们只要把最后一个节点的next属性置空，并且tail指向它就行了。第三种情况：在链表的任意位置删除节点，那么我们就又要遍历整个链表了，直到遍历出要被删的节点(current)，那么删除它更简单，current的previous节点指向它的后一节点，它的后一节点指向previous就行了。</strong></li>
+</ul>
+<p>末尾：是不是觉得现在对于链表的认知又提升了一不？是不是超简单的？赶紧自己也动手撸一个链表吧！！！<br><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-11/90726450.jpg" alt=""></p>
+<hr>
+<h1 id="如有帮助，请收藏本博客，谢谢！"><a href="#如有帮助，请收藏本博客，谢谢！" class="headerlink" title="如有帮助，请收藏本博客，谢谢！"></a><strong>如有帮助，请收藏本博客，谢谢！</strong></h1><p><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg" alt=""></p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/08/剑指-6/" itemprop="url">
-              
-                <span itemprop="name">剑指Offer第六题：旋转数组的最小数字</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-08T22:58:47+08:00"
-              content="2017-12-08" >
-          12-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/07/剑指-5/" itemprop="url">
-              
-                <span itemprop="name">剑指Offer第五题：用两个栈实现队列</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-07T20:20:52+08:00"
-              content="2017-12-07" >
-          12-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/06/剑指-4/" itemprop="url">
-              
-                <span itemprop="name">剑指Offer第四题：重建二叉树</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-06T22:04:59+08:00"
-              content="2017-12-06" >
-          12-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/05/剑指-3/" itemprop="url">
-              
-                <span itemprop="name">剑指Offer第三题：从尾到头打印链表</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-05T21:37:34+08:00"
-              content="2017-12-05" >
-          12-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/04/剑指-2/" itemprop="url">
-              
-                <span itemprop="name">剑指Offer第二题：替换空格</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-04T22:29:09+08:00"
-              content="2017-12-04" >
-          12-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/04/剑指-1/" itemprop="url">
-              
-                <span itemprop="name">剑指Offer第一题：二维数组中的查找</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-04T21:13:41+08:00"
-              content="2017-12-04" >
-          12-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/10/剑指-8/" rel="next" title="剑指Offer第八题：跳台阶">
+                <i class="fa fa-chevron-left"></i> 剑指Offer第八题：跳台阶
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2017/12/page/2/">2</a><a class="extend next" rel="next" href="/archives/2017/12/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -751,6 +566,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -771,8 +600,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -853,6 +691,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#双向链表"><span class="nav-number">1.</span> <span class="nav-text">双向链表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#双向链表的优点"><span class="nav-number">1.1.</span> <span class="nav-text">双向链表的优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node类"><span class="nav-number">1.2.</span> <span class="nav-text">Node类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DoublyLinkedList类"><span class="nav-number">1.3.</span> <span class="nav-text">DoublyLinkedList类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#双向链表的方法"><span class="nav-number">1.3.1.</span> <span class="nav-text">双向链表的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#insert"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">insert</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#removeAt"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">removeAt</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如有帮助，请收藏本博客，谢谢！"><span class="nav-number">2.</span> <span class="nav-text">如有帮助，请收藏本博客，谢谢！</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1033,6 +887,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
@@ -1050,6 +908,18 @@
       <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/12/11/双向链表/';
+          this.page.identifier = '2017/12/11/双向链表/';
+          this.page.title = '双向链表';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
