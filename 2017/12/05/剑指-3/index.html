@@ -136,7 +136,7 @@
 <meta property="og:description" content="前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。  从尾到头打印链表输入一个链表，从尾到头打印链表每个节点的值。  什么叫链表，如果不清楚的可以先去了解下，接下来直接进入正题！ 题目：反向打印链表的所有节点。因为链表中每个节点包含的是本身节点的信息(value)和指向下一节点的指针，所以我们需要获取的就是这个value，但是要遍历所有节点，所以我们不可避免的需要用到这个指针。那">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg">
-<meta property="og:updated_time" content="2017-12-07T12:30:58.737Z">
+<meta property="og:updated_time" content="2017-12-11T13:50:46.309Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="剑指Offer第三题：从尾到头打印链表">
 <meta name="twitter:description" content="前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。  从尾到头打印链表输入一个链表，从尾到头打印链表每个节点的值。  什么叫链表，如果不清楚的可以先去了解下，接下来直接进入正题！ 题目：反向打印链表的所有节点。因为链表中每个节点包含的是本身节点的信息(value)和指向下一节点的指针，所以我们需要获取的就是这个value，但是要遍历所有节点，所以我们不可避免的需要用到这个指针。那">
@@ -467,7 +467,7 @@
 <h1 id="从尾到头打印链表"><a href="#从尾到头打印链表" class="headerlink" title="从尾到头打印链表"></a>从尾到头打印链表</h1><p>输入一个链表，从尾到头打印链表每个节点的值。</p>
 <ul>
 <li>什么叫<a href="http://www.baike.com/wiki/%E9%93%BE%E8%A1%A8" target="_blank" rel="noopener">链表</a>，如果不清楚的可以先去了解下，接下来直接进入正题！</li>
-<li><strong>题目：反向打印链表的所有节点。因为链表中每个节点包含的是本身节点的信息(value)和指向下一节点的指针，所以我们需要获取的就是这个value，但是要遍历所有节点，所以我们不可避免的需要用到这个指针。那么我们该如何反向输出整个链表呢？这时候链表的表亲=&gt;数组登场了，JS数组的API非常强大，本身属性方法中就有push、pop、unshift、shift等操作数组方法。既然题目要反向输出，而且链表是从头指向下一级，直到为null才结束，所以我们只要每次取到一个链表节点的时候，把它从数组的头部放入，也就是栈的思想，后进节点的永远在最前面，那么这样数组中就保存了整个反向链表，直接就能输出了！</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/*function ListNode(x)&#123;</span><br><span class="line">    this.val = x;</span><br><span class="line">    this.next = null;</span><br><span class="line">&#125;*/</span><br><span class="line">function printListFromTailToHead(head)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    let arr = []</span><br><span class="line">    while(head) &#123;</span><br><span class="line">        arr.unshift(head.val)</span><br><span class="line">        head = head.next</span><br><span class="line">    &#125;</span><br><span class="line">    return arr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><strong>题目：反向打印链表的所有节点。因为链表中每个节点包含的是本身节点的信息(value)和指向下一节点的指针，所以我们需要获取的就是这个value，但是要遍历所有节点，所以我们不可避免的需要用到这个指针。那么我们该如何反向输出整个链表呢？这时候链表的表亲=&gt;数组登场了，JS数组的API非常强大，本身属性方法中就有push、pop、unshift、shift等操作数组方法。既然题目要反向输出，而且链表是从头指向下一级，直到为null才结束，所以我们只要每次取到一个链表节点的时候，把它从数组的头部放入，也就是栈的思想，后进节点的永远在最前面，那么这样数组中就保存了整个反向链表，直接就能输出了！</strong><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*function ListNode(x)&#123;</span></span><br><span class="line"><span class="comment">    this.val = x;</span></span><br><span class="line"><span class="comment">    this.next = null;</span></span><br><span class="line"><span class="comment">&#125;*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printListFromTailToHead</span>(<span class="params">head</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">let</span> arr = []</span><br><span class="line">    <span class="keyword">while</span>(head) &#123;</span><br><span class="line">        arr.unshift(head.val)</span><br><span class="line">        head = head.next</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
@@ -615,7 +615,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

@@ -127,19 +127,19 @@
 
 
 
-<meta name="description" content="前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。  跳台阶一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法。  题目中说明青蛙要么跳1级，要么就2级。假如只有1级台阶，那么青蛙跳的方式就是F(1)=1。如果有2级台阶，F(2)=2。如果有3级台阶，F(3)=3">
+<meta name="description" content="前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。  跳台阶一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法。  题目中说明青蛙要么跳1级，要么就2级。假如只有1级台阶，当前情况只能跳1级。假如有2级台阶，那么显然有两种跳法，第一次要么跳1级，要么直接跳2级。那">
 <meta name="keywords" content="JS,算法,数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="剑指Offer第八题：跳台阶">
 <meta property="og:url" content="http://yoursite.com/2017/12/10/剑指-8/index.html">
 <meta property="og:site_name" content="Yittang">
-<meta property="og:description" content="前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。  跳台阶一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法。  题目中说明青蛙要么跳1级，要么就2级。假如只有1级台阶，那么青蛙跳的方式就是F(1)=1。如果有2级台阶，F(2)=2。如果有3级台阶，F(3)=3。假如此时青蛙要跳n级台阶，那么假设青蛙第一次跳1级，那么剩下n-1级台阶的跳法">
+<meta property="og:description" content="前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。  跳台阶一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法。  题目中说明青蛙要么跳1级，要么就2级。假如只有1级台阶，当前情况只能跳1级。假如有2级台阶，那么显然有两种跳法，第一次要么跳1级，要么直接跳2级。那当跳n级台阶时，如果我们把它看成是n的函数(n&amp;gt;2)。假如第一次跳1级台阶">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg">
-<meta property="og:updated_time" content="2017-12-10T10:47:12.331Z">
+<meta property="og:updated_time" content="2017-12-11T13:49:40.643Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="剑指Offer第八题：跳台阶">
-<meta name="twitter:description" content="前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。  跳台阶一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法。  题目中说明青蛙要么跳1级，要么就2级。假如只有1级台阶，那么青蛙跳的方式就是F(1)=1。如果有2级台阶，F(2)=2。如果有3级台阶，F(3)=3。假如此时青蛙要跳n级台阶，那么假设青蛙第一次跳1级，那么剩下n-1级台阶的跳法">
+<meta name="twitter:description" content="前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。  跳台阶一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法。  题目中说明青蛙要么跳1级，要么就2级。假如只有1级台阶，当前情况只能跳1级。假如有2级台阶，那么显然有两种跳法，第一次要么跳1级，要么直接跳2级。那当跳n级台阶时，如果我们把它看成是n的函数(n&amp;gt;2)。假如第一次跳1级台阶">
 <meta name="twitter:image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg">
 
 
@@ -466,9 +466,9 @@
 <hr>
 <h1 id="跳台阶"><a href="#跳台阶" class="headerlink" title="跳台阶"></a>跳台阶</h1><p>一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法。</p>
 <ul>
-<li><strong>题目中说明青蛙要么跳1级，要么就2级。假如只有1级台阶，那么青蛙跳的方式就是F(1)=1。如果有2级台阶，F(2)=2。如果有3级台阶，F(3)=3。假如此时青蛙要跳n级台阶，那么假设青蛙第一次跳1级，那么剩下n-1级台阶的跳法，如果第一次跳2级，那么剩下n-2级台阶的跳法，所以F(n)=F(n-1)+F(n-2)，看到这个式子是不是觉得很眼熟?对，你没看错。，它就是之前的斐波那契数列的式子。虽然这题可以用递归的方式，但用递归的方式太浪费时间，用两个变量去记录前两次的跳法，显然循环会比递归效率很多。</strong></li>
+<li><strong>题目中说明青蛙要么跳1级，要么就2级。假如只有1级台阶，当前情况只能跳1级。假如有2级台阶，那么显然有两种跳法，第一次要么跳1级，要么直接跳2级。那当跳n级台阶时，如果我们把它看成是n的函数(n&gt;2)。假如第一次跳1级台阶，那么就剩下F(n-1)种跳法，如果第一次跳2级，那么就剩下F(n-2)种跳法。所以F(n)=F(n-1)+F(n-2)。思路虽然是这样，但如果我们通过递归函数去求得这种结果，会让程序的执行效率非常的低，所以我们需要去想有没有其它更好的方法。还有记得前一题斐波那契数列么？如果我们需要去获取这个数列的最后一项，那么我们可以通过循环把前两个值分别赋值给两个变量，只要把这两个变量相加就是我们所需的结果。</strong></li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">function jumpFloor(number)</span><br><span class="line">&#123;</span><br><span class="line">    // write code here</span><br><span class="line">    if(number &lt;= 0) &#123;</span><br><span class="line">        return false</span><br><span class="line">    &#125;else if(number === 1) &#123;</span><br><span class="line">        return 1</span><br><span class="line">    &#125;else if(number === 2) &#123;</span><br><span class="line">        return 2</span><br><span class="line">    &#125;</span><br><span class="line">    let pre = 1,</span><br><span class="line">        next = 2,</span><br><span class="line">        result = 0</span><br><span class="line">    for(let i=3; i&lt;=number; i++) &#123;</span><br><span class="line">        result = pre + next</span><br><span class="line">        pre = next</span><br><span class="line">        next = result</span><br><span class="line">    &#125;</span><br><span class="line">    return result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jumpFloor</span>(<span class="params">number</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(number &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(number === <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(number === <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> pre = <span class="number">1</span>,</span><br><span class="line">        next = <span class="number">2</span>,</span><br><span class="line">        result = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">3</span>; i&lt;=number; i++) &#123;</span><br><span class="line">        result = pre + next</span><br><span class="line">        pre = next</span><br><span class="line">        next = result</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <h1 id="如有帮助，请收藏本博客，谢谢！"><a href="#如有帮助，请收藏本博客，谢谢！" class="headerlink" title="如有帮助，请收藏本博客，谢谢！"></a><strong>如有帮助，请收藏本博客，谢谢！</strong></h1><p><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg" alt=""></p>
 
@@ -614,7 +614,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

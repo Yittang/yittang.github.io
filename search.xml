@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[剑指Offer第九题：变态跳台阶]]></title>
+    <url>%2F2017%2F12%2F11%2F%E5%89%91%E6%8C%87-9%2F</url>
+    <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 变态跳台阶一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。 这道题就是前一题的衍生题。如果青蛙第一次跳1级，那么还剩下F(n-1)种跳法，第一次跳2级，那么还剩下F(n-2)种跳法。。。如果跳n-1级，那么还剩下F(n-(n-1))种跳法。所以F(n)=F(n-1)+F(n-2)+…+F(2)+F(1)，此时我们可以用到高中的数学知识，得出F(n-1)=F(n-2)+F(n-3)+…+F(2)+F(1),两式相减，所以此时得到F(n)=2*F(n-1)。1234567891011function jumpFloorII(number)&#123; // write code here if(number &lt;= 0) &#123; return false &#125;else if(number === 1) &#123; return 1 &#125;else &#123; return 2*jumpFloorII(number -1) &#125;&#125; 在网上还看到一种超厉害的代码,二进制移位操作 每个台阶都有跳与不跳两种情况（除了最后一个台阶），最后一个台阶必须跳。所以共用2^(n-1)中情况 12345function jumpFloorII(number)&#123; // write code here return 1 &lt;&lt; (number-1)&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
+      <categories>
+        <category>剑指Offer系列</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>算法</tag>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[双向链表]]></title>
     <url>%2F2017%2F12%2F11%2F%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8%2F</url>
     <content type="text"><![CDATA[双向链表上次已经整理过关于单向链表的知识点了，那么今天就来说说关于双向链表的知识吧。何为双向链表呢？它跟单向链表唯一的不同就在于，每个节点不再只是单纯的指向下一个节点了，而是指向双向，一个链向下一个节点，一个链向上一个链表，如图所示。 双向链表的优点它比链表多一个指向，就是因为单向链表在错过要取的元素，每次都要从头来过，所以双向链表就承载了这一使命，错过的元素不需要每次重新迭代。 Node类12345function Node(element) &#123; this.element = element this.pre = null //新增 this.next = null&#125; 它(this.pre)比单向链表多了一个指向前一节点的指针。 DoublyLinkedList类12345function DoublyLinkedList() &#123; this.head = null this.length = 0 this.tail = null //新增&#125; 它(tail)比单向链表新增了一个指向链表尾部的指针。 双向链表的方法insert 在双向链表任意位置添加元素12345678910111213141516171819202122232425262728293031323334353637DoublyLinkedList.prototype.insert = function (position, element) &#123; if(position &gt;= 0 &amp;&amp; position &lt;= this.length) &#123; let node = new Node(element), current = this.head, previous, index = 0 if (position === 0) &#123; if (!this.head) &#123; this.head = node this.tail = node &#125;else &#123; node.next = current current.pre = node this.head = node &#125; &#125; else if (position === this.length) &#123; current = this.tail current.next = node node.pre = current this.tail = node &#125; else &#123; //position !== 0 while (index &lt; position) &#123; previous = current current = current.next index++ &#125; previous.next = node node.next = current node.pre = previous current.pre = node &#125; //position !== 0 this.length++ &#125; else &#123; return false &#125;&#125; 看到上面一大堆代码是不是感觉很害怕？别怕，其实双向链表的insert方法跟单向链表的没有差距很多，只是新增了一些而已。还是分情况来讨论新元素插入在链表的几种位置情况。第一种：新元素直接在头节点插入，如果头节点本身不存在，那么头节点此时就指向了新元素，此时链表只有当前的新元素，也就是最后一个元素，那么tail指向这个最后一个元素。第二种：新元素插入在链表的尾部，因为我们链表当中有个属性是指向整个链表的尾部，所以我们直接可以把当前元素指向这个tail，这样我们能直接获取链表的最后一个节点，此时添加新元素，只要把尾元素的下一指针指向新元素，新元素的前一指针指向原最后的元素，tail指向这个新元素，那么就完成了新元素插入链表尾部的事件。第三种，就是向链表的中间某一位置插入新元素，这跟单向链表的方式很类似，从头开始遍历整个链表，取到要插入位置的前一元素(previous)和当前元素(current，也是即将成为新元素的后一元素)，因为是双向链表，所以我们的previous.next指向新元素，新元素的pre指针指向previous，新元素的next指针指向current节点，current的pre指针指向新元素。最后千万别忘了，让真个链表的长度加加！ removeAt 在任意位置移除元素1234567891011121314151617181920212223242526272829303132DoublyLinkedList.prototype.removeAt = function(position) &#123; if(position &gt;= 0 &amp;&amp; position &lt; this.length) &#123; let current = this.head, index = 0, previous if(position === 0) &#123; this.head = current.next if(this.length === 1) &#123; this.tail = null &#125;else &#123; this.head.pre = null &#125; &#125;else if(position === this.length-1) &#123; current = this.tail this.tail = current.pre current.pre.next = null &#125;else &#123; while (index &lt; position) &#123; previous = current current = current.next index++ &#125; previous.next = current.next current = current.next current.pre = previous &#125; this.length-- return current.element &#125;else &#123; return false &#125;&#125; 如果你理解了之前的insert方法，那么对于理解removeAt方法对你来说并不会有什么太大难度。好，继续来分析这个方法。对于removeAt方法，我们还是要分情况讨论。第一种：删去头节点，很简单，只要头节点指向当前元素的下一节点就行了，但是在这里当心噢！因为可能整个链表只有这一个节点，所以如果只有这一个节点，那么要把tail给置空，如果不是，那就要把新头节点的pre属性置空。第二种情况：删去链表尾部，我们能通过tail来得到链表的最后一个节点，所以我们只要把最后一个节点的next属性置空，并且tail指向它就行了。第三种情况：在链表的任意位置删除节点，那么我们就又要遍历整个链表了，直到遍历出要被删的节点(current)，那么删除它更简单，current的previous节点指向它的后一节点，它的后一节点指向previous就行了。 末尾：是不是觉得现在对于链表的认知又提升了一不？是不是超简单的？赶紧自己也动手撸一个链表吧！！！ 如有帮助，请收藏本博客，谢谢！]]></content>
@@ -14,7 +27,7 @@
   <entry>
     <title><![CDATA[剑指Offer第八题：跳台阶]]></title>
     <url>%2F2017%2F12%2F10%2F%E5%89%91%E6%8C%87-8%2F</url>
-    <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 跳台阶一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法。 题目中说明青蛙要么跳1级，要么就2级。假如只有1级台阶，那么青蛙跳的方式就是F(1)=1。如果有2级台阶，F(2)=2。如果有3级台阶，F(3)=3。假如此时青蛙要跳n级台阶，那么假设青蛙第一次跳1级，那么剩下n-1级台阶的跳法，如果第一次跳2级，那么剩下n-2级台阶的跳法，所以F(n)=F(n-1)+F(n-2)，看到这个式子是不是觉得很眼熟?对，你没看错。，它就是之前的斐波那契数列的式子。虽然这题可以用递归的方式，但用递归的方式太浪费时间，用两个变量去记录前两次的跳法，显然循环会比递归效率很多。 1234567891011121314151617181920function jumpFloor(number)&#123; // write code here if(number &lt;= 0) &#123; return false &#125;else if(number === 1) &#123; return 1 &#125;else if(number === 2) &#123; return 2 &#125; let pre = 1, next = 2, result = 0 for(let i=3; i&lt;=number; i++) &#123; result = pre + next pre = next next = result &#125; return result&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
+    <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 跳台阶一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法。 题目中说明青蛙要么跳1级，要么就2级。假如只有1级台阶，当前情况只能跳1级。假如有2级台阶，那么显然有两种跳法，第一次要么跳1级，要么直接跳2级。那当跳n级台阶时，如果我们把它看成是n的函数(n&gt;2)。假如第一次跳1级台阶，那么就剩下F(n-1)种跳法，如果第一次跳2级，那么就剩下F(n-2)种跳法。所以F(n)=F(n-1)+F(n-2)。思路虽然是这样，但如果我们通过递归函数去求得这种结果，会让程序的执行效率非常的低，所以我们需要去想有没有其它更好的方法。还有记得前一题斐波那契数列么？如果我们需要去获取这个数列的最后一项，那么我们可以通过循环把前两个值分别赋值给两个变量，只要把这两个变量相加就是我们所需的结果。 1234567891011121314151617181920function jumpFloor(number)&#123; // write code here if(number &lt;= 0) &#123; return false &#125;else if(number === 1) &#123; return 1 &#125;else if(number === 2) &#123; return 2 &#125; let pre = 1, next = 2, result = 0 for(let i=3; i&lt;=number; i++) &#123; result = pre + next pre = next next = result &#125; return result&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
       <categories>
         <category>剑指Offer系列</category>
       </categories>
@@ -103,7 +116,7 @@
   <entry>
     <title><![CDATA[剑指Offer第二题：替换空格]]></title>
     <url>%2F2017%2F12%2F04%2F%E5%89%91%E6%8C%87-2%2F</url>
-    <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 替换空格请实现一个函数，将一个字符串中的空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。 JS中有一项非常强大的利器：正则，其中有专门对应空格的匹配，和替换的方法replace。1234567function replaceSpace(str)&#123; // write code here let reg = /\s/g str = str.replace(reg, &quot;%20&quot;) return str&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
+    <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 替换空格请实现一个函数，将一个字符串中的空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。 JS中有一项非常强大的利器：正则，其中有专门对应空格的匹配，和替换的方法replace。1234567function replaceSpace(str)&#123; // write code here let reg = /\s/g str = str.replace(reg, "%20") return str&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
       <categories>
         <category>剑指Offer系列</category>
       </categories>
