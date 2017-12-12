@@ -127,19 +127,19 @@
 
 
 
-<meta name="description" content="前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。  矩形覆盖我们可以用21的小矩形横着或者竖着去覆盖更大的矩形。请问用n个21的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？  碰到这种题，先从头开始试试有没有规律可循。如果n等于零，那么铁定是0种方法。如果n是1，那么也就只有一种方法。如">
+<meta name="description" content="前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。  矩形覆盖我们可以用2*1的小矩形横着或者竖着去覆盖更大的矩形。请问用n个2*1的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？  碰到这种题，先从头开始试试有没有规律可循。如果n等于零，那么铁定是0种方法。如果n是1，那么也就只有一种方法">
 <meta name="keywords" content="JS,算法,数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="剑指Offer第十题：矩形覆盖">
 <meta property="og:url" content="http://yoursite.com/2017/12/12/剑指-10/index.html">
 <meta property="og:site_name" content="Yittang">
-<meta property="og:description" content="前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。  矩形覆盖我们可以用21的小矩形横着或者竖着去覆盖更大的矩形。请问用n个21的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？  碰到这种题，先从头开始试试有没有规律可循。如果n等于零，那么铁定是0种方法。如果n是1，那么也就只有一种方法。如果n是2，那么就两种放法。当n是3，第一次如果横着放，那么就剩下F(3-1)种放">
+<meta property="og:description" content="前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。  矩形覆盖我们可以用2*1的小矩形横着或者竖着去覆盖更大的矩形。请问用n个2*1的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？  碰到这种题，先从头开始试试有没有规律可循。如果n等于零，那么铁定是0种方法。如果n是1，那么也就只有一种方法。如果n是2，那么就两种放法。当n是3，第一次如果横着放，那么就剩下F(3-1)">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg">
-<meta property="og:updated_time" content="2017-12-12T12:42:19.862Z">
+<meta property="og:updated_time" content="2017-12-12T12:45:10.721Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="剑指Offer第十题：矩形覆盖">
-<meta name="twitter:description" content="前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。  矩形覆盖我们可以用21的小矩形横着或者竖着去覆盖更大的矩形。请问用n个21的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？  碰到这种题，先从头开始试试有没有规律可循。如果n等于零，那么铁定是0种方法。如果n是1，那么也就只有一种方法。如果n是2，那么就两种放法。当n是3，第一次如果横着放，那么就剩下F(3-1)种放">
+<meta name="twitter:description" content="前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。  矩形覆盖我们可以用2*1的小矩形横着或者竖着去覆盖更大的矩形。请问用n个2*1的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？  碰到这种题，先从头开始试试有没有规律可循。如果n等于零，那么铁定是0种方法。如果n是1，那么也就只有一种方法。如果n是2，那么就两种放法。当n是3，第一次如果横着放，那么就剩下F(3-1)">
 <meta name="twitter:image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg">
 
 
@@ -464,7 +464,7 @@
       
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h3 id="此系列为牛客网剑指Offer系列。"><a href="#此系列为牛客网剑指Offer系列。" class="headerlink" title="此系列为牛客网剑指Offer系列。"></a><strong>此系列为<a href="https://www.nowcoder.com/ta/coding-interviews" target="_blank" rel="noopener">牛客网剑指Offer系列</a>。</strong></h3><p>撰写此博文只为记录点滴与总结。</p>
 <hr>
-<h1 id="矩形覆盖"><a href="#矩形覆盖" class="headerlink" title="矩形覆盖"></a>矩形覆盖</h1><p>我们可以用2<em>1的小矩形横着或者竖着去覆盖更大的矩形。请问用n个2</em>1的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？</p>
+<h1 id="矩形覆盖"><a href="#矩形覆盖" class="headerlink" title="矩形覆盖"></a>矩形覆盖</h1><p>我们可以用2*1的小矩形横着或者竖着去覆盖更大的矩形。请问用n个2*1的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？</p>
 <ul>
 <li><strong>碰到这种题，先从头开始试试有没有规律可循。如果n等于零，那么铁定是0种方法。如果n是1，那么也就只有一种方法。如果n是2，那么就两种放法。当n是3，第一次如果横着放，那么就剩下F(3-1)种放法，如果第一次竖着放，第二次也只能竖着放，最后只剩下F(3-2)种放法。从这里其实可以已经看出这题有点像我们之前做的<a href="http://yittang.cn/2017/12/09/%E5%89%91%E6%8C%87-7/#more" target="_blank" rel="noopener">斐波那契数列</a>，你不妨可以再试试后面几个值。既然是斐波那契数列，那就好办了，除了前三项是特定之外，后面的每一项都是前两项之和。</strong><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">rectCover</span>(<span class="params">number</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">let</span> arr = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">    <span class="keyword">if</span>(number &lt;=<span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> arr[number]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">3</span>; i&lt;=number; i++) &#123;</span><br><span class="line">        arr[i] = arr[i<span class="number">-1</span>] + arr[i<span class="number">-2</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr[number]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
