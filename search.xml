@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[剑指Offer第十题：矩形覆盖]]></title>
+    <url>%2F2017%2F12%2F12%2F%E5%89%91%E6%8C%87-10%2F</url>
+    <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 矩形覆盖我们可以用21的小矩形横着或者竖着去覆盖更大的矩形。请问用n个21的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？ 碰到这种题，先从头开始试试有没有规律可循。如果n等于零，那么铁定是0种方法。如果n是1，那么也就只有一种方法。如果n是2，那么就两种放法。当n是3，第一次如果横着放，那么就剩下F(3-1)种放法，如果第一次竖着放，第二次也只能竖着放，最后只剩下F(3-2)种放法。从这里其实可以已经看出这题有点像我们之前做的斐波那契数列，你不妨可以再试试后面几个值。既然是斐波那契数列，那就好办了，除了前三项是特定之外，后面的每一项都是前两项之和。123456789101112function rectCover(number)&#123; // write code here let arr = [0, 1, 2] if(number &lt;=2) &#123; return arr[number] &#125; for(let i=3; i&lt;=number; i++) &#123; arr[i] = arr[i-1] + arr[i-2] &#125; return arr[number]&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
+      <categories>
+        <category>剑指Offer系列</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>算法</tag>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[剑指Offer第九题：变态跳台阶]]></title>
     <url>%2F2017%2F12%2F11%2F%E5%89%91%E6%8C%87-9%2F</url>
     <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 变态跳台阶一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。 这道题就是前一题的衍生题。如果青蛙第一次跳1级，那么还剩下F(n-1)种跳法，第一次跳2级，那么还剩下F(n-2)种跳法。。。如果跳n-1级，那么还剩下F(n-(n-1))种跳法。所以F(n)=F(n-1)+F(n-2)+…+F(2)+F(1)，此时我们可以用到高中的数学知识，得出F(n-1)=F(n-2)+F(n-3)+…+F(2)+F(1),两式相减，所以此时得到F(n)=2*F(n-1)。1234567891011function jumpFloorII(number)&#123; // write code here if(number &lt;= 0) &#123; return false &#125;else if(number === 1) &#123; return 1 &#125;else &#123; return 2*jumpFloorII(number -1) &#125;&#125; 在网上还看到一种超厉害的代码,二进制移位操作 每个台阶都有跳与不跳两种情况（除了最后一个台阶），最后一个台阶必须跳。所以共用2^(n-1)中情况 12345function jumpFloorII(number)&#123; // write code here return 1 &lt;&lt; (number-1)&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
@@ -27,7 +40,7 @@
   <entry>
     <title><![CDATA[剑指Offer第八题：跳台阶]]></title>
     <url>%2F2017%2F12%2F10%2F%E5%89%91%E6%8C%87-8%2F</url>
-    <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 跳台阶一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法。 题目中说明青蛙要么跳1级，要么就2级。假如只有1级台阶，当前情况只能跳1级。假如有2级台阶，那么显然有两种跳法，第一次要么跳1级，要么直接跳2级。那当跳n级台阶时，如果我们把它看成是n的函数(n&gt;2)。假如第一次跳1级台阶，那么就剩下F(n-1)种跳法，如果第一次跳2级，那么就剩下F(n-2)种跳法。所以F(n)=F(n-1)+F(n-2)。思路虽然是这样，但如果我们通过递归函数去求得这种结果，会让程序的执行效率非常的低，所以我们需要去想有没有其它更好的方法。还有记得前一题斐波那契数列么？如果我们需要去获取这个数列的最后一项，那么我们可以通过循环把前两个值分别赋值给两个变量，只要把这两个变量相加就是我们所需的结果。 1234567891011121314151617181920function jumpFloor(number)&#123; // write code here if(number &lt;= 0) &#123; return false &#125;else if(number === 1) &#123; return 1 &#125;else if(number === 2) &#123; return 2 &#125; let pre = 1, next = 2, result = 0 for(let i=3; i&lt;=number; i++) &#123; result = pre + next pre = next next = result &#125; return result&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
+    <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 跳台阶一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法。 题目中说明青蛙要么跳1级，要么就2级。假如只有1级台阶，当前情况只能跳1级。假如有2级台阶，那么显然有两种跳法，第一次要么跳1级，要么直接跳2级。那当跳n级台阶时，如果我们把它看成是n的函数(n&gt;2)。假如第一次跳1级台阶，那么就剩下F(n-1)种跳法，如果第一次跳2级，那么就剩下F(n-2)种跳法。所以F(n)=F(n-1)+F(n-2)。思路虽然是这样，但如果我们通过递归函数去求得这种结果，会让程序的执行效率非常的低，所以我们需要去想有没有其它更好的方法。还有记得前一题斐波那契数列么？如果我们需要去获取这个数列的最后一项，那么我们可以通过循环把前两个值分别赋值给两个变量，只要把这两个变量相加就是我们所需的结果。1234567891011121314151617181920function jumpFloor(number)&#123; // write code here if(number &lt;= 0) &#123; return false &#125;else if(number === 1) &#123; return 1 &#125;else if(number === 2) &#123; return 2 &#125; let pre = 1, next = 2, result = 0 for(let i=3; i&lt;=number; i++) &#123; result = pre + next pre = next next = result &#125; return result&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
       <categories>
         <category>剑指Offer系列</category>
       </categories>
