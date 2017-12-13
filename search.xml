@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[剑指Offer第十一题：二进制中1的个数]]></title>
+    <url>%2F2017%2F12%2F13%2F%E5%89%91%E6%8C%87-11%2F</url>
+    <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 二进制中1的个数输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。 假设输入一个10，那么它的二进制就是0000 1010，要得到这个二进制中1的个数，就想办法右移这个二进制，那么1的右移就通过减去1来实现。每次减一，就会让最右边(不一定是第0位)的1向右移一位，那么此时就变成了0000 1001，这时候这个二进制就是十进制的9，和原数相与，那么就得到了0000 1000。这时候你应该能想到每次这样操作，就能遍历出所有1。 12345678910function NumberOf1(n)&#123; // write code here let count = 0 while(n !== 0) &#123; n = n &amp; (n-1) count++ &#125; return count&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
+      <categories>
+        <category>剑指Offer系列</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>算法</tag>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[剑指Offer第十题：矩形覆盖]]></title>
     <url>%2F2017%2F12%2F12%2F%E5%89%91%E6%8C%87-10%2F</url>
     <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 矩形覆盖我们可以用2*1的小矩形横着或者竖着去覆盖更大的矩形。请问用n个2*1的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？ 碰到这种题，先从头开始试试有没有规律可循。如果n等于零，那么铁定是0种方法。如果n是1，那么也就只有一种方法。如果n是2，那么就两种放法。当n是3，第一次如果横着放，那么就剩下F(3-1)种放法，如果第一次竖着放，第二次也只能竖着放，最后只剩下F(3-2)种放法。从这里其实可以已经看出这题有点像我们之前做的斐波那契数列，你不妨可以再试试后面几个值。既然是斐波那契数列，那就好办了，除了前三项是特定之外，后面的每一项都是前两项之和。123456789101112function rectCover(number)&#123; // write code here let arr = [0, 1, 2] if(number &lt;=2) &#123; return arr[number] &#125; for(let i=3; i&lt;=number; i++) &#123; arr[i] = arr[i-1] + arr[i-2] &#125; return arr[number]&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
