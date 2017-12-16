@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[剑指Offer第十二题：数值的整数次方]]></title>
+    <url>%2F2017%2F12%2F16%2F%E5%89%91%E6%8C%87-12%2F</url>
+    <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 数值的整数次方给定一个double类型的浮点数base和int类型的整数exponent。求base的exponent次方。 考虑2种边界值的情况。如果exponent小于零，base为零，那么这样分母就为零，这是错误的，直接返回false。如果exponent为零，base无论为何值，值都为1。这是两种极端的情况，但是还有本题如果exponent小于零，而base不为零，那么值就会是分式，和exponent大于零的时候计算会出现两种值，需要两个变量来存这两种情况，而我们要做的是无论exponent是否是正数还是负数，都把最后的值存在一个变量里，最后返回的时候判断一下就行，所以当exponent为负数时，把它取正，用一个变量来记录exponent其实为负数，这样在最后计算的时候不会分不清exponent到底是正数还是负数的情况。说完了指数的正负零的情况，那么来分析怎么才能计算base应该自乘多少次呢？题目给出指数exponent肯定为整数，那么一个整数我们用二进制去表示，我们能够通过这个二进制数每次右移一位，能得到这个二进制需要右移几次才会变成零，这二进制右移几次也就是base自乘几次。或者每次都减去1也是同一个道理，但记住，如果用减1的方法，要在循环之前先减1!123456789101112131415161718192021function Power(base, exponent)&#123; // write code here let minus = true if(exponent &lt; 0) &#123; if(base === 0) &#123; return false &#125; exponent = -exponent minus = false &#125;else if(exponent === 0) &#123; return 1 &#125; let result = base while(exponent != 0) &#123; exponent &gt;&gt;= 1 result *= base &#125; return minus ? result : (1/result)&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
+      <categories>
+        <category>剑指Offer系列</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>算法</tag>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[剑指Offer第十一题：二进制中1的个数]]></title>
     <url>%2F2017%2F12%2F13%2F%E5%89%91%E6%8C%87-11%2F</url>
     <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 二进制中1的个数输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。 假设输入一个10，那么它的二进制就是0000 1010，要得到这个二进制中1的个数，就想办法右移这个二进制，那么1的右移就通过减去1来实现。每次减一，就会让最右边(不一定是第0位)的1向右移一位，那么此时就变成了0000 1001，这时候这个二进制就是十进制的9，和原数相与，那么就得到了0000 1000。这时候你应该能想到每次这样操作，就能遍历出所有1。 12345678910function NumberOf1(n)&#123; // write code here let count = 0 while(n !== 0) &#123; n = n &amp; (n-1) count++ &#125; return count&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
