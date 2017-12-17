@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[剑指Offer第十三题：调整数组顺序使奇数位于偶数前面]]></title>
+    <url>%2F2017%2F12%2F17%2F%E5%89%91%E6%8C%87-13%2F</url>
+    <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 调整数组顺序使奇数位于偶数前面输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有的奇数位于数组的前半部分，所有的偶数位于位于数组的后半部分，并保证奇数和奇数，偶数和偶数之间的相对位置不变。 这道题给了个无序的数组，也就是说我们并不清楚这个数组里面哪个位置是奇数，哪个是偶数，那么我就只能去遍历每个元素，然后做判断是奇还是偶，奇的存在一个新数组中，偶的存在另一个中，最后合并起来就呈现出我们需要的新数组了。 123456789101112131415161718function reOrderArray(array)&#123; // write code here if(array.length === 0) &#123; return false &#125; let arrLeft = [], arrRight = [] for(let i=0; i&lt;array.length; i++) &#123; if(array[i] % 2 === 0) &#123; arrRight.push(array[i]) &#125;else &#123; arrLeft.push(array[i]) &#125; &#125; array = arrLeft.concat(arrRight) return array&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
+      <categories>
+        <category>剑指Offer系列</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>算法</tag>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[栈]]></title>
     <url>%2F2017%2F12%2F16%2F%E6%A0%88%2F</url>
     <content type="text"><![CDATA[栈今天就来讲讲栈的一些理解。对于什么叫栈，栈的诞生这些在网上可以自行去查阅，我就不再叙述。只要知道栈最明显的一个特点就是：后进先出，后进先出从字面上就是后进的元素会先出去，就像弹夹里面的子弹一样，后进的子弹在先进的子弹的上面，然后发射出去的是最后进的子弹。既然弹夹有弹夹底和弹夹头，那么栈也同样拥有，先进元素所在的一端就是栈底，后进元素所在的一端就是栈顶，只要清楚这个概念，基本上你也就能熟练使用栈了，如下图就是个简单的栈图。 光知道栈的这些简单的概念是不行的，我们需要用JS去实现出来！ 创建栈1234function Stack() &#123; let items = [] //用数组来表示这个栈//各种属性和方法 &#125; 向栈添加元素 很简单，就是用数组里的push方法，往数组后添加元素。123let push = element =&gt; &#123; items.push(element)&#125; 从栈中移出元素 栈顶移除元素，就是数组中的pop方法。123let pop = () =&gt; &#123; items.pop()&#125; 查看栈顶的元素 栈顶元素所在位置就是数组的最后一位123let peek = () =&gt; &#123; return items[items.length - 1]&#125; 检查栈是否为空 栈的长度是否为零123let isEmpty = () =&gt; &#123; return items.length === 0&#125; 清空栈 只要把栈重新赋个空值就行123let clear = () =&gt; &#123; items = []&#125; 打印栈内的元素 把栈内的元素转成字符串形势输出到控制台显示。123let print = () =&gt; &#123; console.log(items.toString())&#125; 全部代码1234567891011121314151617181920212223242526272829class Stack &#123; constructor() &#123; this.items = [] &#125; push(element) &#123; this.items.push(element) &#125; pop() &#123; this.items.pop() &#125; peek() &#123; return this.items[this.items.length - 1] &#125; isEmpty() &#123; return this.items.length === 0 &#125; clear() &#123; this.items = [] &#125; print() &#123; console.log(this.items.toString()) &#125;&#125; 栈的应用 十进制数转换成任意进制数123456789101112131415161718function baseConverter(decNumber, base) &#123; var remStack = new Stack(), rem, baseString = '', digits = '0123456789ABCDEF' while (decNumber &gt; 0) &#123; rem = Math.floor(decNumber % base); remStack.push(rem); decNumber = Math.floor(decNumber / base); &#125; while(!remStack.isEmpty()) &#123; baseString += digits[remStack.items.pop()] &#125; return baseString &#125;console.log(baseConverter(10,16)) 如有帮助，请收藏本博客，谢谢！]]></content>
