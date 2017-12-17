@@ -114,7 +114,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="数据结构," />
 
 
 
@@ -127,16 +127,20 @@
 
 
 
-<meta name="description" content="爱好游戏的码农">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Yittang">
-<meta property="og:url" content="http://yoursite.com/tags/数据结构/index.html">
+<meta name="description" content="队列之前讲解了一下对于栈的概念以及用JS去实现一个栈的方法，那么今天再来介绍下与栈很相近的一个数据结构：队列。其实编程中的很多数据结构及理念都来源于生活，今天要讲的队列其实就是生活中的排队，谁先排进队伍，那么谁先受到服务，然后最先出列，这一点是跟栈截然相反的地方。队列是遵循FIFO(First In First Out">
+<meta name="keywords" content="数据结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="队列">
+<meta property="og:url" content="http://yoursite.com/2017/12/17/队列/index.html">
 <meta property="og:site_name" content="Yittang">
-<meta property="og:description" content="爱好游戏的码农">
+<meta property="og:description" content="队列之前讲解了一下对于栈的概念以及用JS去实现一个栈的方法，那么今天再来介绍下与栈很相近的一个数据结构：队列。其实编程中的很多数据结构及理念都来源于生活，今天要讲的队列其实就是生活中的排队，谁先排进队伍，那么谁先受到服务，然后最先出列，这一点是跟栈截然相反的地方。队列是遵循FIFO(First In First Out)原则的一组有序的项，队列在尾部添加新元素，在顶部移除新元素。 创建队列1234">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg">
+<meta property="og:updated_time" content="2017-12-17T12:05:20.884Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yittang">
-<meta name="twitter:description" content="爱好游戏的码农">
+<meta name="twitter:title" content="队列">
+<meta name="twitter:description" content="队列之前讲解了一下对于栈的概念以及用JS去实现一个栈的方法，那么今天再来介绍下与栈很相近的一个数据结构：队列。其实编程中的很多数据结构及理念都来源于生活，今天要讲的队列其实就是生活中的排队，谁先排进队伍，那么谁先受到服务，然后最先出列，这一点是跟栈截然相反的地方。队列是遵循FIFO(First In First Out)原则的一组有序的项，队列在尾部添加新元素，在顶部移除新元素。 创建队列1234">
+<meta name="twitter:image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg">
 
 
 
@@ -166,13 +170,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/数据结构/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/17/队列/"/>
 
 
 
 
 
-  <title>标签: 数据结构 | Yittang</title>
+  <title>队列 | Yittang</title>
   
 
 
@@ -191,7 +195,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -339,310 +343,195 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>数据结构<small>标签</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/17/队列/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yittang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/34141810.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yittang">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/12/17/队列/" itemprop="url">
-              
-                <span itemprop="name">队列</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">队列</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-17T18:28:31+08:00"
-              content="2017-12-17" >
-          12-17
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-17T18:28:31+08:00">
+                2017-12-17
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/17/剑指-13/" itemprop="url">
-              
-                <span itemprop="name">剑指Offer第十三题：调整数组顺序使奇数位于偶数前面</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-17T18:04:57+08:00"
-              content="2017-12-17" >
-          12-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/16/栈/" itemprop="url">
-              
-                <span itemprop="name">栈</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-16T19:23:08+08:00"
-              content="2017-12-16" >
-          12-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/16/剑指-12/" itemprop="url">
-              
-                <span itemprop="name">剑指Offer第十二题：数值的整数次方</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-16T17:43:43+08:00"
-              content="2017-12-16" >
-          12-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/13/剑指-11/" itemprop="url">
-              
-                <span itemprop="name">剑指Offer第十一题：二进制中1的个数</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-13T22:02:16+08:00"
-              content="2017-12-13" >
-          12-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/12/剑指-10/" itemprop="url">
-              
-                <span itemprop="name">剑指Offer第十题：矩形覆盖</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-12T20:25:34+08:00"
-              content="2017-12-12" >
-          12-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/11/剑指-9/" itemprop="url">
-              
-                <span itemprop="name">剑指Offer第九题：变态跳台阶</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-11T20:46:29+08:00"
-              content="2017-12-11" >
-          12-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/11/双向链表/" itemprop="url">
-              
-                <span itemprop="name">双向链表</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-11T17:49:20+08:00"
-              content="2017-12-11" >
-          12-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/10/剑指-8/" itemprop="url">
-              
-                <span itemprop="name">剑指Offer第八题：跳台阶</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-10T18:34:17+08:00"
-              content="2017-12-10" >
-          12-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/09/链表/" itemprop="url">
-              
-                <span itemprop="name">单向链表</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-09T18:39:19+08:00"
-              content="2017-12-09" >
-          12-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <h1 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h1><p>之前讲解了一下对于栈的概念以及用JS去实现一个<a href="http://yittang.cn/2017/12/16/%E6%A0%88/#more" target="_blank" rel="noopener">栈</a>的方法，那么今天再来介绍下与栈很相近的一个数据结构：队列。其实编程中的很多数据结构及理念都来源于生活，今天要讲的队列其实就是生活中的排队，谁先排进队伍，那么谁先受到服务，然后最先出列，这一点是跟栈截然相反的地方。队列是遵循FIFO(First In First Out)原则的一组有序的项，队列在尾部添加新元素，在顶部移除新元素。</p>
+<h2 id="创建队列"><a href="#创建队列" class="headerlink" title="创建队列"></a>创建队列</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Queue</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="keyword">this</span>.items = []</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    enqueue(element) &#123;</span><br><span class="line">        <span class="keyword">this</span>.items.push(element)</span><br><span class="line">    &#125; <span class="comment">//尾部添加元素</span></span><br><span class="line"></span><br><span class="line">    dequeue() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.items.shift()</span><br><span class="line">    &#125; <span class="comment">//顶部移除元素</span></span><br><span class="line"></span><br><span class="line">    front() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.items[<span class="number">0</span>]</span><br><span class="line">    &#125; <span class="comment">//返回队列的第一个元素</span></span><br><span class="line"></span><br><span class="line">    isEmpty() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.items.length === <span class="number">0</span></span><br><span class="line">    &#125; <span class="comment">//队列是否为空</span></span><br><span class="line"></span><br><span class="line">    size() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.items.length</span><br><span class="line">    &#125; <span class="comment">//队列的长度</span></span><br><span class="line"></span><br><span class="line">    print() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.items.toString())</span><br><span class="line">    &#125; <span class="comment">//打印队列</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>队列中的方法跟之前介绍栈的方法都很相近，我相信只要你理解之前那篇<a href="http://yittang.cn/2017/12/16/%E6%A0%88/#more" target="_blank" rel="noopener">栈</a>，那么这段队列的方法，你也一定能理解，实在不懂，可以去翻看栈那篇文章。</strong></li>
+</ul>
+<p>我们生活中的队列当然不止普通的队列先进先出这种原则，当然还有特殊的队列，就如医院看病，一个生命垂危的病人和一个只是小病的病人相比，医院应当优先处理这个生命垂危的病人，而不是按照谁先来看病谁先就医，这样会出人命。所以队列也有这种特殊情况，这就是优先队列。</p>
+<h2 id="创建优先队列"><a href="#创建优先队列" class="headerlink" title="创建优先队列"></a>创建优先队列</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">QueueElement</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(element, priority) &#123;</span><br><span class="line">        <span class="keyword">this</span>.element = element</span><br><span class="line">        <span class="keyword">this</span>.priority = priority</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PriorityQueue</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="keyword">this</span>.items = []</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    enqueue(element, priority) &#123;</span><br><span class="line">        <span class="keyword">let</span> isPriority = <span class="literal">false</span></span><br><span class="line">        <span class="keyword">let</span> queueElement = <span class="keyword">new</span> QueueElement(element, priority)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;<span class="keyword">this</span>.items.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(queueElement.priority &lt; <span class="keyword">this</span>.items[i].priority) &#123;</span><br><span class="line">                <span class="keyword">this</span>.items.splice(i, <span class="number">0</span>, queueElement)</span><br><span class="line">                isPriority = <span class="literal">true</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!isPriority) &#123;</span><br><span class="line">            <span class="keyword">this</span>.items.push(queueElement)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    dequeue() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.items.shift()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    front() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.items[<span class="number">0</span>]</span><br><span class="line">    &#125; </span><br><span class="line"></span><br><span class="line">    isEmpty() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.items.length === <span class="number">0</span></span><br><span class="line">    &#125; </span><br><span class="line"></span><br><span class="line">    size() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.items.length</span><br><span class="line">    &#125; </span><br><span class="line"></span><br><span class="line">    print() &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;<span class="keyword">this</span>.items.length; i++) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">`第<span class="subst">$&#123;i&#125;</span>个队列<span class="subst">$&#123;<span class="keyword">this</span>.items[i].element&#125;</span>和其优先级是<span class="subst">$&#123;<span class="keyword">this</span>.items[i].priority&#125;</span>`</span>)  </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>优先队列的做法有两种：一种就是我上面这种，在push之前就判断优先级然后放入，这样在出队列的时候就不用再判断了；另一种就是push时不判断，在pop的时候判断它的优先级，有兴趣的话你可以试试。我就只介绍我的这种思路，如果新添加元素的priority小于原队列元素的priority的值，那么就把新元素插入在其前面。如果没有优先的机制，就正常push就行了。</strong></li>
+</ul>
+<p>除了以上两种队列，其实还有一种很好玩的队列：循环队列。我们应该都知道生活中一个游戏叫做击鼓传花，意思就是大家围成一个圈，从第一个人开始传花，接下去每个人接到这个花然后传下去，直到某一刻传花停止，花在谁手里谁就出局，直到人数为1时才算结束。接下来就是来模拟这种游戏效果。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Pass</span>(<span class="params">nameList, num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> queue = <span class="keyword">new</span> Queue()</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;nameList.length; i++) &#123;</span><br><span class="line">        queue.enqueue(nameList[i])</span><br><span class="line">        <span class="built_in">console</span>.log(queue.items)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(queue.size() &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> eliminated = <span class="string">""</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">0</span>; j&lt;num; j++) &#123;</span><br><span class="line">            queue.enqueue(queue.dequeue())</span><br><span class="line">        &#125;</span><br><span class="line">        eliminated = queue.dequeue()</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">`此局淘汰者是：<span class="subst">$&#123;eliminated&#125;</span>`</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> queue.items          </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> names = [<span class="string">'John'</span>, <span class="string">'Li'</span>, <span class="string">'Mike'</span>, <span class="string">'Hei'</span>, <span class="string">'Mis'</span>]</span><br><span class="line"><span class="keyword">let</span> winner = Pass(names, <span class="number">7</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`最终获胜者是： <span class="subst">$&#123;winner&#125;</span>`</span>)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><strong>首先我们需要第一种普通队列的类，我们接到一个玩游戏的名单，把它传入队列中，然后就是游戏开始，如果人数大于1，就一直传花下去，每次都要把一个人给淘汰出去，直到人数只有1个人的时候才是最后的胜利者。那么每次传花我们怎么才能算传几次来淘汰一个人呢？这时候就通过我们一开始输入的传花次数，一旦达到传花次数，那么当前这个人就被淘汰，如此循环下去。</strong></li>
+</ul>
+<hr>
+<h1 id="如有帮助，请收藏本博客，谢谢！"><a href="#如有帮助，请收藏本博客，谢谢！" class="headerlink" title="如有帮助，请收藏本博客，谢谢！"></a><strong>如有帮助，请收藏本博客，谢谢！</strong></h1><p><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg" alt=""></p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/17/剑指-13/" rel="next" title="剑指Offer第十三题：调整数组顺序使奇数位于偶数前面">
+                <i class="fa fa-chevron-left"></i> 剑指Offer第十三题：调整数组顺序使奇数位于偶数前面
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/tags/数据结构/page/2/">2</a><a class="extend next" rel="next" href="/tags/数据结构/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
 
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -650,6 +539,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -670,8 +566,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -752,6 +657,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#队列"><span class="nav-number">1.</span> <span class="nav-text">队列</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建队列"><span class="nav-number">1.1.</span> <span class="nav-text">创建队列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建优先队列"><span class="nav-number">1.2.</span> <span class="nav-text">创建优先队列</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如有帮助，请收藏本博客，谢谢！"><span class="nav-number">2.</span> <span class="nav-text">如有帮助，请收藏本博客，谢谢！</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -932,6 +853,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
