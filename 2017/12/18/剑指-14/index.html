@@ -127,19 +127,19 @@
 
 
 
-<meta name="description" content="链表中倒数第K个结点输入一个链表，输出该链表中倒数第k个结点。  在链表的元素个数不为零或者k是正数的情况下，用两个指针分别去指向这个链表的头部，其中指针1正向走K步，也就是说指针1和指针2之间的长度是K，那么此时只要我们两个指针同时开始正向走，直到指针1走到链表的末尾，那么指针2此时就是指向倒数第K个元素。  123">
+<meta name="description" content="前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。  链表中倒数第K个结点输入一个链表，输出该链表中倒数第k个结点。  在链表的元素个数不为零或者k是正数的情况下，用两个指针分别去指向这个链表的头部，其中指针1正向走K步，也就是说指针1和指针2之间的长度是K，那么此时只要我们两个指针同时开始正向走，直">
 <meta name="keywords" content="JS,算法,数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="剑指Offer第十四题：链表中倒数第K个结点">
 <meta property="og:url" content="http://yoursite.com/2017/12/18/剑指-14/index.html">
 <meta property="og:site_name" content="Yittang">
-<meta property="og:description" content="链表中倒数第K个结点输入一个链表，输出该链表中倒数第k个结点。  在链表的元素个数不为零或者k是正数的情况下，用两个指针分别去指向这个链表的头部，其中指针1正向走K步，也就是说指针1和指针2之间的长度是K，那么此时只要我们两个指针同时开始正向走，直到指针1走到链表的末尾，那么指针2此时就是指向倒数第K个元素。  123456789101112131415161718192021function F">
+<meta property="og:description" content="前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。  链表中倒数第K个结点输入一个链表，输出该链表中倒数第k个结点。  在链表的元素个数不为零或者k是正数的情况下，用两个指针分别去指向这个链表的头部，其中指针1正向走K步，也就是说指针1和指针2之间的长度是K，那么此时只要我们两个指针同时开始正向走，直到指针1走到链表的末尾，那么指针2此时就是指向倒数第K个元素。  1234567">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg">
-<meta property="og:updated_time" content="2017-12-18T13:30:29.425Z">
+<meta property="og:updated_time" content="2017-12-20T11:40:34.401Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="剑指Offer第十四题：链表中倒数第K个结点">
-<meta name="twitter:description" content="链表中倒数第K个结点输入一个链表，输出该链表中倒数第k个结点。  在链表的元素个数不为零或者k是正数的情况下，用两个指针分别去指向这个链表的头部，其中指针1正向走K步，也就是说指针1和指针2之间的长度是K，那么此时只要我们两个指针同时开始正向走，直到指针1走到链表的末尾，那么指针2此时就是指向倒数第K个元素。  123456789101112131415161718192021function F">
+<meta name="twitter:description" content="前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。  链表中倒数第K个结点输入一个链表，输出该链表中倒数第k个结点。  在链表的元素个数不为零或者k是正数的情况下，用两个指针分别去指向这个链表的头部，其中指针1正向走K步，也就是说指针1和指针2之间的长度是K，那么此时只要我们两个指针同时开始正向走，直到指针1走到链表的末尾，那么指针2此时就是指向倒数第K个元素。  1234567">
 <meta name="twitter:image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg">
 
 
@@ -451,7 +451,9 @@
       
 
       
-        <h1 id="链表中倒数第K个结点"><a href="#链表中倒数第K个结点" class="headerlink" title="链表中倒数第K个结点"></a>链表中倒数第K个结点</h1><p>输入一个链表，输出该链表中倒数第k个结点。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h3 id="此系列为牛客网剑指Offer系列。"><a href="#此系列为牛客网剑指Offer系列。" class="headerlink" title="此系列为牛客网剑指Offer系列。"></a><strong>此系列为<a href="https://www.nowcoder.com/ta/coding-interviews" target="_blank" rel="noopener">牛客网剑指Offer系列</a>。</strong></h3><p>撰写此博文只为记录点滴与总结。</p>
+<hr>
+<h1 id="链表中倒数第K个结点"><a href="#链表中倒数第K个结点" class="headerlink" title="链表中倒数第K个结点"></a>链表中倒数第K个结点</h1><p>输入一个链表，输出该链表中倒数第k个结点。</p>
 <ul>
 <li><strong>在链表的元素个数不为零或者k是正数的情况下，用两个指针分别去指向这个链表的头部，其中指针1正向走K步，也就是说指针1和指针2之间的长度是K，那么此时只要我们两个指针同时开始正向走，直到指针1走到链表的末尾，那么指针2此时就是指向倒数第K个元素。</strong></li>
 </ul>
@@ -501,6 +503,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/20/剑指-15/" rel="prev" title="剑指Offer第十五题：反转链表">
+                剑指Offer第十五题：反转链表 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -590,7 +596,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -662,7 +668,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#链表中倒数第K个结点"><span class="nav-number">1.</span> <span class="nav-text">链表中倒数第K个结点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如有帮助，请收藏本博客，谢谢！"><span class="nav-number">2.</span> <span class="nav-text">如有帮助，请收藏本博客，谢谢！</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#此系列为牛客网剑指Offer系列。"><span class="nav-number">1.0.1.</span> <span class="nav-text">此系列为牛客网剑指Offer系列。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链表中倒数第K个结点"><span class="nav-number">2.</span> <span class="nav-text">链表中倒数第K个结点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如有帮助，请收藏本博客，谢谢！"><span class="nav-number">3.</span> <span class="nav-text">如有帮助，请收藏本博客，谢谢！</span></a></li></ol></div>
             
 
           </div>

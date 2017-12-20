@@ -114,7 +114,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JS,算法,数据结构," />
 
 
 
@@ -127,16 +127,22 @@
 
 
 
-<meta name="description" content="爱好游戏的码农">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Yittang">
-<meta property="og:url" content="http://yoursite.com/tags/算法/page/2/index.html">
+<meta name="description" content="前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。  反转链表输入一个链表，反转链表后，输出链表的所有元素。  原先链表如图一，反转之后如图二，原先的head指向第一个结点，现在指向最后一个结点，原先的第一个结点指向第二个结点，现在指向null，变成整个链表的最后一个结点，所以这时候我们需要引入两个指">
+<meta name="keywords" content="JS,算法,数据结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="剑指Offer第十五题：反转链表">
+<meta property="og:url" content="http://yoursite.com/2017/12/20/剑指-15/index.html">
 <meta property="og:site_name" content="Yittang">
-<meta property="og:description" content="爱好游戏的码农">
+<meta property="og:description" content="前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。  反转链表输入一个链表，反转链表后，输出链表的所有元素。  原先链表如图一，反转之后如图二，原先的head指向第一个结点，现在指向最后一个结点，原先的第一个结点指向第二个结点，现在指向null，变成整个链表的最后一个结点，所以这时候我们需要引入两个指针(pre，next)，一个指向当前头结点的前一个结点也就是反转之后的null，">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-20/22542354.jpg">
+<meta property="og:image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-20/44152017.jpg">
+<meta property="og:image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg">
+<meta property="og:updated_time" content="2017-12-20T12:05:48.217Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yittang">
-<meta name="twitter:description" content="爱好游戏的码农">
+<meta name="twitter:title" content="剑指Offer第十五题：反转链表">
+<meta name="twitter:description" content="前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。  反转链表输入一个链表，反转链表后，输出链表的所有元素。  原先链表如图一，反转之后如图二，原先的head指向第一个结点，现在指向最后一个结点，原先的第一个结点指向第二个结点，现在指向null，变成整个链表的最后一个结点，所以这时候我们需要引入两个指针(pre，next)，一个指向当前头结点的前一个结点也就是反转之后的null，">
+<meta name="twitter:image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-20/22542354.jpg">
 
 
 
@@ -166,13 +172,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/算法/page/2/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/20/剑指-15/"/>
 
 
 
 
 
-  <title>标签: 算法 | Yittang</title>
+  <title>剑指Offer第十五题：反转链表 | Yittang</title>
   
 
 
@@ -191,7 +197,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -339,170 +345,193 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>算法<small>标签</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/20/剑指-15/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yittang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/34141810.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yittang">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/12/07/剑指-5/" itemprop="url">
-              
-                <span itemprop="name">剑指Offer第五题：用两个栈实现队列</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">剑指Offer第十五题：反转链表</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-07T20:20:52+08:00"
-              content="2017-12-07" >
-          12-07
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-20T19:39:02+08:00">
+                2017-12-20
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/剑指Offer系列/" itemprop="url" rel="index">
+                    <span itemprop="name">剑指Offer系列</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/06/剑指-4/" itemprop="url">
-              
-                <span itemprop="name">剑指Offer第四题：重建二叉树</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-06T22:04:59+08:00"
-              content="2017-12-06" >
-          12-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/05/剑指-3/" itemprop="url">
-              
-                <span itemprop="name">剑指Offer第三题：从尾到头打印链表</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-05T21:37:34+08:00"
-              content="2017-12-05" >
-          12-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/04/剑指-2/" itemprop="url">
-              
-                <span itemprop="name">剑指Offer第二题：替换空格</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-04T22:29:09+08:00"
-              content="2017-12-04" >
-          12-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/04/剑指-1/" itemprop="url">
-              
-                <span itemprop="name">剑指Offer第一题：二维数组中的查找</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-04T21:13:41+08:00"
-              content="2017-12-04" >
-          12-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h3 id="此系列为牛客网剑指Offer系列。"><a href="#此系列为牛客网剑指Offer系列。" class="headerlink" title="此系列为牛客网剑指Offer系列。"></a><strong>此系列为<a href="https://www.nowcoder.com/ta/coding-interviews" target="_blank" rel="noopener">牛客网剑指Offer系列</a>。</strong></h3><p>撰写此博文只为记录点滴与总结。</p>
+<hr>
+<h1 id="反转链表"><a href="#反转链表" class="headerlink" title="反转链表"></a>反转链表</h1><p>输入一个链表，反转链表后，输出链表的所有元素。</p>
+<ul>
+<li><strong>原先链表如图一，反转之后如图二，原先的head指向第一个结点，现在指向最后一个结点，原先的第一个结点指向第二个结点，现在指向null，变成整个链表的最后一个结点，所以这时候我们需要引入两个指针(pre，next)，一个指向当前头结点的前一个结点也就是反转之后的null，另一个指向当前头结点的后一个结点，也就是当前第二个结点。接下来就是做反转了，先保存头节点的下一节点，也就是next指向的结点，之后头节点的下一节点指针指向pre，然后指针后移，第二个结点指向原先的头结点，如此往复。</strong></li>
+</ul>
+<p><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-20/22542354.jpg" alt="正向链表"><br><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-20/44152017.jpg" alt="反转链表"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*function ListNode(x)&#123;</span></span><br><span class="line"><span class="comment">    this.val = x;</span></span><br><span class="line"><span class="comment">    this.next = null;</span></span><br><span class="line"><span class="comment">&#125;*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ReverseList</span>(<span class="params">pHead</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(!pHead) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> pre = <span class="literal">null</span>, <span class="comment">//head前一结点</span></span><br><span class="line">            next = <span class="literal">null</span> <span class="comment">//head后一结点</span></span><br><span class="line">        <span class="keyword">while</span>(pHead) &#123;</span><br><span class="line">            next = pHead.next <span class="comment">//next保存当前结点的下一节结点</span></span><br><span class="line">            pHead.next = pre <span class="comment">//原先头结点指向null</span></span><br><span class="line">            pre = pHead <span class="comment">//pre指向原先head，即后移指针</span></span><br><span class="line">            pHead = next <span class="comment">//头结点指针指向后结点，即后移指针</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pre</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="如有帮助，请收藏本博客，谢谢！"><a href="#如有帮助，请收藏本博客，谢谢！" class="headerlink" title="如有帮助，请收藏本博客，谢谢！"></a><strong>如有帮助，请收藏本博客，谢谢！</strong></h1><p><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg" alt=""></p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JS/" rel="tag"># JS</a>
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/18/剑指-14/" rel="next" title="剑指Offer第十四题：链表中倒数第K个结点">
+                <i class="fa fa-chevron-left"></i> 剑指Offer第十四题：链表中倒数第K个结点
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/tags/算法/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/tags/算法/">1</a><span class="page-number current">2</span>
-  </nav>
 
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -510,6 +539,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -530,8 +566,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -612,6 +657,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#此系列为牛客网剑指Offer系列。"><span class="nav-number">1.0.1.</span> <span class="nav-text">此系列为牛客网剑指Offer系列。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#反转链表"><span class="nav-number">2.</span> <span class="nav-text">反转链表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如有帮助，请收藏本博客，谢谢！"><span class="nav-number">3.</span> <span class="nav-text">如有帮助，请收藏本博客，谢谢！</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -792,6 +853,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 

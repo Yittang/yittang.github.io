@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-12-18T13:30:29.425Z</updated>
+  <updated>2017-12-20T12:05:48.217Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,21 +17,48 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>剑指Offer第十四题：链表中倒数第K个结点</title>
-    <link href="http://yoursite.com/2017/12/18/%E5%89%91%E6%8C%87-14/"/>
-    <id>http://yoursite.com/2017/12/18/剑指-14/</id>
-    <published>2017-12-18T13:24:49.000Z</published>
-    <updated>2017-12-18T13:30:29.425Z</updated>
+    <title>剑指Offer第十五题：反转链表</title>
+    <link href="http://yoursite.com/2017/12/20/%E5%89%91%E6%8C%87-15/"/>
+    <id>http://yoursite.com/2017/12/20/剑指-15/</id>
+    <published>2017-12-20T11:39:02.000Z</published>
+    <updated>2017-12-20T12:05:48.217Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="链表中倒数第K个结点"><a href="#链表中倒数第K个结点" class="headerlink" title="链表中倒数第K个结点"></a>链表中倒数第K个结点</h1><p>输入一个链表，输出该链表中倒数第k个结点。</p><ul><li><strong>在链表的元素个数不为零或者k是正数的情况下，用两个指针分别去指向这个链表的头部，其中指针1正向走K步，也就是说指针1和指针2之间的长度是K，那么此时只要我们两个指针同时开始正向走，直到指针1走到链表的末尾，那么指针2此时就是指向倒数第K个元素。</strong></li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindKthToTail</span>(<span class="params">head, k</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(head === <span class="literal">null</span> || k &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> pre = head</span><br><span class="line">    <span class="keyword">let</span> inext = head</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>; i&lt;k; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(pre.next) &#123;</span><br><span class="line">            pre = pre.next</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(pre.next) &#123;</span><br><span class="line">        pre = pre.next</span><br><span class="line">        inext = inext.next</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> inext</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><hr><h1 id="如有帮助，请收藏本博客，谢谢！"><a href="#如有帮助，请收藏本博客，谢谢！" class="headerlink" title="如有帮助，请收藏本博客，谢谢！"></a><strong>如有帮助，请收藏本博客，谢谢！</strong></h1><p><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg" alt=""></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h3 id="此系列为牛客网剑指Offer系列。"><a href="#此系列为牛客网剑指Offer系列。" class="headerlink" title="此系列为牛客网剑指Offer系列。"></a><strong>此系列为<a href="https://www.nowcoder.com/ta/coding-interviews" target="_blank" rel="noopener">牛客网剑指Offer系列</a>。</strong></h3><p>撰写此博文只为记录点滴与总结。</p><hr><h1 id="反转链表"><a href="#反转链表" class="headerlink" title="反转链表"></a>反转链表</h1><p>输入一个链表，反转链表后，输出链表的所有元素。</p><ul><li><strong>原先链表如图一，反转之后如图二，原先的head指向第一个结点，现在指向最后一个结点，原先的第一个结点指向第二个结点，现在指向null，变成整个链表的最后一个结点，所以这时候我们需要引入两个指针(pre，next)，一个指向当前头结点的前一个结点也就是反转之后的null，另一个指向当前头结点的后一个结点，也就是当前第二个结点。接下来就是做反转了，先保存头节点的下一节点，也就是next指向的结点，之后头节点的下一节点指针指向pre，然后指针后移，第二个结点指向原先的头结点，如此往复。</strong></li></ul><p><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-20/22542354.jpg" alt="正向链表"><br><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-20/44152017.jpg" alt="反转链表"></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*function ListNode(x)&#123;</span></span><br><span class="line"><span class="comment">    this.val = x;</span></span><br><span class="line"><span class="comment">    this.next = null;</span></span><br><span class="line"><span class="comment">&#125;*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ReverseList</span>(<span class="params">pHead</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(!pHead) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> pre = <span class="literal">null</span>, <span class="comment">//head前一结点</span></span><br><span class="line">            next = <span class="literal">null</span> <span class="comment">//head后一结点</span></span><br><span class="line">        <span class="keyword">while</span>(pHead) &#123;</span><br><span class="line">            next = pHead.next <span class="comment">//next保存当前结点的下一节结点</span></span><br><span class="line">            pHead.next = pre <span class="comment">//原先头结点指向null</span></span><br><span class="line">            pre = pHead <span class="comment">//pre指向原先head，即后移指针</span></span><br><span class="line">            pHead = next <span class="comment">//头结点指针指向后结点，即后移指针</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pre</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><hr><h1 id="如有帮助，请收藏本博客，谢谢！"><a href="#如有帮助，请收藏本博客，谢谢！" class="headerlink" title="如有帮助，请收藏本博客，谢谢！"></a><strong>如有帮助，请收藏本博客，谢谢！</strong></h1><p><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg" alt=""></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;链表中倒数第K个结点&quot;&gt;&lt;a href=&quot;#链表中倒数第K个结点&quot; class=&quot;headerlink&quot; title=&quot;链表中倒数第K个结点&quot;&gt;&lt;/a&gt;链表中倒数第K个结点&lt;/h1&gt;&lt;p&gt;输入一个链表，输出该链表中倒数第k个结点。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;st
+        &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;h3 id=&quot;此系列为牛客网剑指Offer系列。&quot;&gt;&lt;a href=&quot;#此系列为牛客网剑指Offer系列。&quot; class=&quot;headerlink
+      
+    
+    </summary>
+    
+      <category term="剑指Offer系列" scheme="http://yoursite.com/categories/%E5%89%91%E6%8C%87Offer%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="JS" scheme="http://yoursite.com/tags/JS/"/>
+    
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>剑指Offer第十四题：链表中倒数第K个结点</title>
+    <link href="http://yoursite.com/2017/12/18/%E5%89%91%E6%8C%87-14/"/>
+    <id>http://yoursite.com/2017/12/18/剑指-14/</id>
+    <published>2017-12-18T13:24:49.000Z</published>
+    <updated>2017-12-20T11:40:34.401Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h3 id="此系列为牛客网剑指Offer系列。"><a href="#此系列为牛客网剑指Offer系列。" class="headerlink" title="此系列为牛客网剑指Offer系列。"></a><strong>此系列为<a href="https://www.nowcoder.com/ta/coding-interviews" target="_blank" rel="noopener">牛客网剑指Offer系列</a>。</strong></h3><p>撰写此博文只为记录点滴与总结。</p><hr><h1 id="链表中倒数第K个结点"><a href="#链表中倒数第K个结点" class="headerlink" title="链表中倒数第K个结点"></a>链表中倒数第K个结点</h1><p>输入一个链表，输出该链表中倒数第k个结点。</p><ul><li><strong>在链表的元素个数不为零或者k是正数的情况下，用两个指针分别去指向这个链表的头部，其中指针1正向走K步，也就是说指针1和指针2之间的长度是K，那么此时只要我们两个指针同时开始正向走，直到指针1走到链表的末尾，那么指针2此时就是指向倒数第K个元素。</strong></li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindKthToTail</span>(<span class="params">head, k</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(head === <span class="literal">null</span> || k &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> pre = head</span><br><span class="line">    <span class="keyword">let</span> inext = head</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>; i&lt;k; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(pre.next) &#123;</span><br><span class="line">            pre = pre.next</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(pre.next) &#123;</span><br><span class="line">        pre = pre.next</span><br><span class="line">        inext = inext.next</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> inext</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><hr><h1 id="如有帮助，请收藏本博客，谢谢！"><a href="#如有帮助，请收藏本博客，谢谢！" class="headerlink" title="如有帮助，请收藏本博客，谢谢！"></a><strong>如有帮助，请收藏本博客，谢谢！</strong></h1><p><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;h3 id=&quot;此系列为牛客网剑指Offer系列。&quot;&gt;&lt;a href=&quot;#此系列为牛客网剑指Offer系列。&quot; class=&quot;headerlink
       
     
     </summary>

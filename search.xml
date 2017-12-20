@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[剑指Offer第十五题：反转链表]]></title>
+    <url>%2F2017%2F12%2F20%2F%E5%89%91%E6%8C%87-15%2F</url>
+    <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 反转链表输入一个链表，反转链表后，输出链表的所有元素。 原先链表如图一，反转之后如图二，原先的head指向第一个结点，现在指向最后一个结点，原先的第一个结点指向第二个结点，现在指向null，变成整个链表的最后一个结点，所以这时候我们需要引入两个指针(pre，next)，一个指向当前头结点的前一个结点也就是反转之后的null，另一个指向当前头结点的后一个结点，也就是当前第二个结点。接下来就是做反转了，先保存头节点的下一节点，也就是next指向的结点，之后头节点的下一节点指针指向pre，然后指针后移，第二个结点指向原先的头结点，如此往复。 123456789101112131415161718192021/*function ListNode(x)&#123; this.val = x; this.next = null;&#125;*/function ReverseList(pHead)&#123; // write code here if(!pHead) &#123; return false &#125;else &#123; let pre = null, //head前一结点 next = null //head后一结点 while(pHead) &#123; next = pHead.next //next保存当前结点的下一节结点 pHead.next = pre //原先头结点指向null pre = pHead //pre指向原先head，即后移指针 pHead = next //头结点指针指向后结点，即后移指针 &#125; return pre &#125;&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
+      <categories>
+        <category>剑指Offer系列</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>算法</tag>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[剑指Offer第十四题：链表中倒数第K个结点]]></title>
     <url>%2F2017%2F12%2F18%2F%E5%89%91%E6%8C%87-14%2F</url>
-    <content type="text"><![CDATA[链表中倒数第K个结点输入一个链表，输出该链表中倒数第k个结点。 在链表的元素个数不为零或者k是正数的情况下，用两个指针分别去指向这个链表的头部，其中指针1正向走K步，也就是说指针1和指针2之间的长度是K，那么此时只要我们两个指针同时开始正向走，直到指针1走到链表的末尾，那么指针2此时就是指向倒数第K个元素。 123456789101112131415161718192021function FindKthToTail(head, k)&#123; // write code here if(head === null || k &lt;= 0) &#123; return false &#125; let pre = head let inext = head for(let i=1; i&lt;k; i++) &#123; if(pre.next) &#123; pre = pre.next &#125;else &#123; return false &#125; &#125; while(pre.next) &#123; pre = pre.next inext = inext.next &#125; return inext&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
+    <content type="text"><![CDATA[前言此系列为牛客网剑指Offer系列。撰写此博文只为记录点滴与总结。 链表中倒数第K个结点输入一个链表，输出该链表中倒数第k个结点。 在链表的元素个数不为零或者k是正数的情况下，用两个指针分别去指向这个链表的头部，其中指针1正向走K步，也就是说指针1和指针2之间的长度是K，那么此时只要我们两个指针同时开始正向走，直到指针1走到链表的末尾，那么指针2此时就是指向倒数第K个元素。 123456789101112131415161718192021function FindKthToTail(head, k)&#123; // write code here if(head === null || k &lt;= 0) &#123; return false &#125; let pre = head let inext = head for(let i=1; i&lt;k; i++) &#123; if(pre.next) &#123; pre = pre.next &#125;else &#123; return false &#125; &#125; while(pre.next) &#123; pre = pre.next inext = inext.next &#125; return inext&#125; 如有帮助，请收藏本博客，谢谢！]]></content>
       <categories>
         <category>剑指Offer系列</category>
       </categories>
