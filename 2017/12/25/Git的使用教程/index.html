@@ -163,7 +163,7 @@
 <meta property="og:image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-26/7318322.jpg">
 <meta property="og:image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-26/60750422.jpg">
 <meta property="og:image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg">
-<meta property="og:updated_time" content="2017-12-26T09:19:26.719Z">
+<meta property="og:updated_time" content="2017-12-26T12:22:42.936Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git的使用教程">
 <meta name="twitter:description" content="前言继上篇初步认识git与github之后，你一定觉得很不过瘾，为什么关于git命令行的这一重要部分像被阉割了一样，不要急，今天我就来说说git的使用！(前方多图高能预警！！！) master分支远程仓库的创建 首先在你可爱的GitHub创建一个仓库，这次我在初始化仓库的时候没有勾选自动生成readme，所以界面就会呈现如图所示，它会提示你在本地该怎么做！  git init—初始化本地仓库 要">
@@ -512,6 +512,7 @@
 <li>在我将修改后的README文件添加到Stage之后，再用<code>git diff HEAD</code>去看看本次提交与最新一次提交的差别，我们就能一目了然。<strong>HEAD</strong>是指向最新一次提交的指针。<br><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-26/57652378.jpg" alt=""></li>
 <li>最好养成在commit之前，看下本次提交与最新一次提交的差别，这样就能保持一个很好的代码管理习惯噢！</li>
 </ul>
+<hr>
 <h1 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h1><h2 id="分支的概念"><a href="#分支的概念" class="headerlink" title="分支的概念"></a>分支的概念</h2><ul>
 <li>在我们初始的github仓库的时候，会生成一个默认的初始分支，那就是<br><em>master</em>，这也就是我们常说的主分支，其它个人创建的都是子分支。子分支会拥有当前master分支的一切代码，然后在这基础上去做自己的事，而不会干扰到master的正常开发。等分支的需求做完了，可以合并到master分支，这样master分支就会拥有子分支所做的功能了，是不是很酷！！！<br><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-26/74456025.jpg" alt=""></li>
 </ul>
@@ -532,6 +533,7 @@
 <h2 id="git-log-–graph—以图表形式查看分支"><a href="#git-log-–graph—以图表形式查看分支" class="headerlink" title="git log –graph—以图表形式查看分支"></a>git log –graph—以图表形式查看分支</h2><ul>
 <li>此时我们可以通过<code>git log --graph</code>这条命令来查看所有分支所做的一切commit，非常的简洁明了。<br><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-26/90332694.jpg" alt=""></li>
 </ul>
+<hr>
 <h1 id="更改提交的操作"><a href="#更改提交的操作" class="headerlink" title="更改提交的操作"></a>更改提交的操作</h1><h2 id="git-reset—回溯历史版本"><a href="#git-reset—回溯历史版本" class="headerlink" title="git reset—回溯历史版本"></a>git reset—回溯历史版本</h2><ul>
 <li>通过前面的几次练习，想必你已经基本熟悉Git的基本操作了吧！但是假如有一天我做的代码更改提交上去之后，我发现之前有一次的代码提交版本我现在需要，而我现在想不起来哪次的提交了，所以这时候用到了<code>git reset</code>命令和之前提的哈希值了。但是我们提交了那么多次，哪里能记得住哪次提交的哈希值，而且它还那么长，是不？所以这时候我们可以在master分支下执行<code>git reflog</code>指令来查看当前仓库的操作日志,一目了然的每次提交操作。<br><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-26/26583474.jpg" alt=""></li>
 <li>既然拿到了我们想要的哈希值，那么我们就能回溯到那个版本去了,因为我回溯到了刚创建A分支的时候，这时候的README是没有修改的，所以B分支修改了内容之后被合并到master分支时的内容也就没有了！<br><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-26/32460352.jpg" alt=""></li>
@@ -548,6 +550,7 @@
 <h2 id="git-push—推送至远程仓库"><a href="#git-push—推送至远程仓库" class="headerlink" title="git push—推送至远程仓库"></a>git push—推送至远程仓库</h2><ul>
 <li>既然我们已经指定了要推送的仓库地址，那么接下来只要我们push当前分支过去就OK拉！我们可以看到远程仓库的master已经拥有了本地master分支的代码了，如果想要push本地的A、B、C分支至远程仓库，那么同样的操作就行。<br><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-26/7318322.jpg" alt=""><br><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-26/60750422.jpg" alt=""></li>
 </ul>
+<hr>
 <h1 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h1><p>好了，Git的基本操作基本都在这了，是不是现在感觉有点晕晕的，没事！这是正常的，赶紧自己去动手试试，你就会马上融会贯通的！</p>
 <hr>
 <h1 id="如有帮助，请收藏本博客，谢谢！"><a href="#如有帮助，请收藏本博客，谢谢！" class="headerlink" title="如有帮助，请收藏本博客，谢谢！"></a><strong>如有帮助，请收藏本博客，谢谢！</strong></h1><p><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg" alt=""></p>
