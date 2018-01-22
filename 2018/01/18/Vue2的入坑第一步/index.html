@@ -144,7 +144,7 @@
 <meta property="og:image" content="http://p0kkg0pkm.bkt.clouddn.com/18-1-18/61734647.jpg">
 <meta property="og:image" content="http://p0kkg0pkm.bkt.clouddn.com/18-1-18/37582782.jpg">
 <meta property="og:image" content="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg">
-<meta property="og:updated_time" content="2018-01-18T13:47:24.725Z">
+<meta property="og:updated_time" content="2018-01-22T11:24:33.256Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue2的入坑第一步">
 <meta name="twitter:description" content="前言为什么会开始写关于Vue的入坑？对，没有错！就是入坑！不进坑，你怎么才能学的快？！言归正传，最近刚好学校期末结束了，没有那么多门课复习浪费时间了，也正好恰逢大四上结束开了毕设，也正正好好恰逢我的毕设项目是做一个整站，前后端全归我一人来做。所以，我就选了当下国内最火的主流前端框架，也是国内尤大开发的—Vue.js。当前这份vue系列博客只记录我开发过程的一些坑，且不为我最终毕设项目，而是在正式">
@@ -460,7 +460,7 @@
 
       
         <p><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-18/50059745.jpg" alt=""></p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>为什么会开始写关于Vue的入坑？对，没有错！就是入坑！不进坑，你怎么才能学的快？！言归正传，最近刚好学校期末结束了，没有那么多门课复习浪费时间了，也正好恰逢大四上结束开了毕设，也正正好好恰逢我的毕设项目是做一个整站，前后端全归我一人来做。所以，我就选了当下国内最火的主流前端框架，也是国内尤大开发的—<strong><a href="https://cn.vuejs.org/" target="_blank" rel="noopener">Vue.js</a>。</strong><br>当前这份vue系列博客只记录我开发过程的一些坑，且不为我最终毕设项目，而是在正式做毕设前的项目—仿饿了么app。好了，废话不多讲，进正题！</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>为什么会开始写关于Vue的入坑？对，没有错！就是入坑！不进坑，你怎么才能学的快？！言归正传，最近刚好学校期末结束了，没有那么多门课复习浪费时间了，也正好恰逢大四上结束开了毕设，也正正好好恰逢我的毕设项目是做一个整站，前后端全归我一人来做。所以，我就选了当下国内最火的主流前端框架，也是国内尤大开发的—<strong><a href="https://cn.vuejs.org/" target="_blank" rel="noopener">Vue.js</a>。</strong><br>当前这份vue系列博客只记录我开发过程的一些坑，且不为我最终毕设项目，而是在正式做毕设前的小项目。好了，废话不多讲，进正题！</p>
 <h1 id="安装vue-cli"><a href="#安装vue-cli" class="headerlink" title="安装vue-cli"></a>安装vue-cli</h1><ul>
 <li>首先就是去Vue的<a href="https://cn.vuejs.org/v2/guide/installation.html" target="_blank" rel="noopener">官网</a>去下载Vue脚手架，只要根据以下几步就能正确下载，如果觉得通过npm下载太慢，可以通过用淘宝镜像去下载。<br><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-18/42762674.jpg" alt=""></li>
 <li>在安装过程中，需要你设置关于脚手架的几个依赖，我都选择不安装，以后用到自己再去安装，当然你也可以选择安装，嘿嘿嘿。。。<br><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-18/36868590.jpg" alt=""><h1 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h1></li>
@@ -468,7 +468,7 @@
 <li>接下来就是来看看我们之前做的一切有木有成果拉！<br><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-18/19137570.jpg" alt=""></li>
 <li>但如果你之前有接触过以前的脚手架，你会发现当前版本的脚手架感觉Low了好多！只因为我的装X利器没了！什么装X利器？！那就是run项目，会自动打开我的浏览器！现在没了！我还以后怎么向我的小伙伴们装一下！No急，跟我做一步！就能继续拥有这种能力了！</li>
 <li>找到我们的项目目录，然后根据我指出的路径找到这个js文件，里面你会发现有个设置属性，只要改为true就OK啦！赶紧去试试把！<strong>‘./config/index.js’</strong><br><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-18/54903358.jpg" alt=""></li>
-<li>最后只简单介绍下vue-cli的几个文件是干嘛用的,大概了解下，想要详细了解的请自行google。<br><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-18/61734647.jpg" alt=""><h1 id="Version"><a href="#Version" class="headerlink" title="Version"></a>Version</h1><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-18/37582782.jpg" alt=""><br><strong>一定要看清楚你当前的脚手架版本噢！我就是因为最近的被这个新版脚手架搞的死去活来，网上许多都是老版本的解答才决定写下这篇踩坑路！希望能帮助到现在的你！</strong></li>
+<li>最后只简单介绍下vue-cli的几个文件是干嘛用的,大概了解下，想要详细了解的请自行google。<br><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-18/61734647.jpg" alt=""><h1 id="Version"><a href="#Version" class="headerlink" title="Version"></a>Version</h1><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-18/37582782.jpg" alt=""><br><strong>一定要看清楚你当前的脚手架版本噢！我就是因为最近的被这个新版脚手架搞的死去活来，才想记录下这篇踩坑路！希望能帮助到现在的你！</strong></li>
 </ul>
 <hr>
 <h1 id="如有帮助，请收藏本博客，谢谢！"><a href="#如有帮助，请收藏本博客，谢谢！" class="headerlink" title="如有帮助，请收藏本博客，谢谢！"></a><strong>如有帮助，请收藏本博客，谢谢！</strong></h1><p><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg" alt=""></p>
@@ -511,6 +511,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/22/less、vue-router及mock数据坑/" rel="prev" title="less、vue-router及mock数据坑">
+                less、vue-router及mock数据坑 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -600,7 +604,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

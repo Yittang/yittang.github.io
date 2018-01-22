@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-01-18T13:47:24.725Z</updated>
+  <updated>2018-01-22T14:02:57.385Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,13 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>less、vue-router及mock数据坑</title>
+    <link href="http://yoursite.com/2018/01/22/less%E3%80%81vue-router%E5%8F%8Amock%E6%95%B0%E6%8D%AE%E5%9D%91/"/>
+    <id>http://yoursite.com/2018/01/22/less、vue-router及mock数据坑/</id>
+    <published>2018-01-22T11:44:12.000Z</published>
+    <updated>2018-01-22T14:02:57.385Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="安装less"><a href="#安装less" class="headerlink" title="安装less"></a>安装less</h1><ul><li>在以前，在做一个项目之前，如果单纯用CSS去写样式，我会觉得写CSS好舒服，感觉是开发中最爽的时候，直到……我遇到了Less！没错，<a href="http://lesscss.cn/" target="_blank" rel="noopener">less</a>是一门CSS的预处理语言，它扩展了 CSS 语言，增加了变量、Mixin、函数等特性，使 CSS 更易维护和扩展。Less 可以运行在 <strong>Node</strong> 或浏览器端。它会教会你有了它，你不会再单纯的想写CSS！<br>因为我刚接触Vue，刚起步，尤其是去看它的文档介绍只有关于Sass(另一门预处理语言)配合脚手架的用法，所以在初次安装Less的时候各种报错(可能是我的姿势不对，嘿嘿)，其实很简单！</li><li>要在Vue脚手架用Less，因为它并没有Less的插件，所以我们需要通过以下这条命令去安装Less及Less-loader到<strong>devDependencies</strong>(开发中使用的插件)<br><code>npm install less less-loader --save-dev</code><br><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-22/50056370.jpg" alt=""></li><li>安装好了依赖，那么就要检测下我们的项目到底能不能用Less呢？其实很简单，那就是在初始HelloWorld.vue文件中的style标签上加上<code>lang=&#39;less&#39;</code>关键字就可，看项目报不报错。<br><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-22/53736336.jpg" alt=""></li></ul><h1 id="安装vue-router"><a href="#安装vue-router" class="headerlink" title="安装vue-router"></a>安装vue-router</h1><ul><li>因为我的项目在建立之初并没有直接安装<a href="https://router.vuejs.org/zh-cn/installation.html" target="_blank" rel="noopener">vue-router</a>依赖，所以现在需要我们手动去下载依赖包，并加入到我们的Vue脚手架中去使用。和上面安装Less的依赖一样，通过以下命令安装。<br><code>npm install vue-router --save</code></li><li>注意了，这次安装最后是没有<code>-dev</code>的！因为我们的项目最后上线的时候还是需要用到vue-router的！所以，我们要安装到<code>dependencies</code>，看清哦！<br><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-22/86179320.jpg" alt=""></li><li>接下来就是引入vue-router。虽然我们做的是个小项目，但是本着我们看着舒心，后期好维护的初心(扯淡),我们引入vue-router就不直接在vue-cli的入口配置文件了，而是新建个router文件夹和index.js去配置路由。<br><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-22/11805923.jpg" alt=""></li><li>目录建立好之后，就是在router文件下的index.js中配置路由了。首先要引入Vue、vue-router、组件，然后Vue启用vue-router，之后配置组件的路径就配置好router了，最后在vue入口配置文件(main.js)中引用和在App.vue中写好HTML即可。<br><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-22/40762354.jpg" alt=""><br><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-22/1629262.jpg" alt=""></li><li>HTML怎么写移步到<a href="https://router.vuejs.org/zh-cn/essentials/getting-started.html" target="_blank" rel="noopener">官网</a><br><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-22/13714365.jpg" alt=""></li><li>好了，到这里基本的vue-router一定初见成效了！</li></ul><h1 id="mock数据"><a href="#mock数据" class="headerlink" title="mock数据"></a>mock数据</h1><ul><li>在这里我们用express框架去简化实现我们mock数据，通过以下命令安装<br><code>npm install express --save</code></li><li>然后在<code>webpack.dev.conf.js</code>文件中配置<br><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-22/54439790.jpg" alt=""><br><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-22/74048971.jpg" alt=""></li><li>最后在正常的url中输入<code>/api/path</code>就能看到数据了！例如：’localhost:8080/api/goods’</li></ul><hr><h1 id="如有帮助，请收藏本博客，谢谢！"><a href="#如有帮助，请收藏本博客，谢谢！" class="headerlink" title="如有帮助，请收藏本博客，谢谢！"></a><strong>如有帮助，请收藏本博客，谢谢！</strong></h1><p><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;安装less&quot;&gt;&lt;a href=&quot;#安装less&quot; class=&quot;headerlink&quot; title=&quot;安装less&quot;&gt;&lt;/a&gt;安装less&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;在以前，在做一个项目之前，如果单纯用CSS去写样式，我会觉得写CSS好舒服，感觉是开发中最爽的时
+      
+    
+    </summary>
+    
+      <category term="Vue2.x" scheme="http://yoursite.com/categories/Vue2-x/"/>
+    
+    
+      <category term="Vue2.x" scheme="http://yoursite.com/tags/Vue2-x/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Vue2的入坑第一步</title>
     <link href="http://yoursite.com/2018/01/18/Vue2%E7%9A%84%E5%85%A5%E5%9D%91%E7%AC%AC%E4%B8%80%E6%AD%A5/"/>
     <id>http://yoursite.com/2018/01/18/Vue2的入坑第一步/</id>
     <published>2018-01-18T12:50:16.000Z</published>
-    <updated>2018-01-18T13:47:24.725Z</updated>
+    <updated>2018-01-22T11:24:33.256Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-18/50059745.jpg" alt=""></p><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>为什么会开始写关于Vue的入坑？对，没有错！就是入坑！不进坑，你怎么才能学的快？！言归正传，最近刚好学校期末结束了，没有那么多门课复习浪费时间了，也正好恰逢大四上结束开了毕设，也正正好好恰逢我的毕设项目是做一个整站，前后端全归我一人来做。所以，我就选了当下国内最火的主流前端框架，也是国内尤大开发的—<strong><a href="https://cn.vuejs.org/" target="_blank" rel="noopener">Vue.js</a>。</strong><br>当前这份vue系列博客只记录我开发过程的一些坑，且不为我最终毕设项目，而是在正式做毕设前的项目—仿饿了么app。好了，废话不多讲，进正题！</p><h1 id="安装vue-cli"><a href="#安装vue-cli" class="headerlink" title="安装vue-cli"></a>安装vue-cli</h1><ul><li>首先就是去Vue的<a href="https://cn.vuejs.org/v2/guide/installation.html" target="_blank" rel="noopener">官网</a>去下载Vue脚手架，只要根据以下几步就能正确下载，如果觉得通过npm下载太慢，可以通过用淘宝镜像去下载。<br><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-18/42762674.jpg" alt=""></li><li>在安装过程中，需要你设置关于脚手架的几个依赖，我都选择不安装，以后用到自己再去安装，当然你也可以选择安装，嘿嘿嘿。。。<br><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-18/36868590.jpg" alt=""><h1 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h1></li><li>时间过得好快，刚写完上面的一段博文，就安装好了vue-cli，那么接下来就是安装项目依赖，这样才能运行你的项目。当然你从GitHub上下载别人的项目时，在本地也要先装依赖噢！<br><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-18/93965894.jpg" alt=""></li><li>接下来就是来看看我们之前做的一切有木有成果拉！<br><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-18/19137570.jpg" alt=""></li><li>但如果你之前有接触过以前的脚手架，你会发现当前版本的脚手架感觉Low了好多！只因为我的装X利器没了！什么装X利器？！那就是run项目，会自动打开我的浏览器！现在没了！我还以后怎么向我的小伙伴们装一下！No急，跟我做一步！就能继续拥有这种能力了！</li><li>找到我们的项目目录，然后根据我指出的路径找到这个js文件，里面你会发现有个设置属性，只要改为true就OK啦！赶紧去试试把！<strong>‘./config/index.js’</strong><br><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-18/54903358.jpg" alt=""></li><li>最后只简单介绍下vue-cli的几个文件是干嘛用的,大概了解下，想要详细了解的请自行google。<br><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-18/61734647.jpg" alt=""><h1 id="Version"><a href="#Version" class="headerlink" title="Version"></a>Version</h1><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-18/37582782.jpg" alt=""><br><strong>一定要看清楚你当前的脚手架版本噢！我就是因为最近的被这个新版脚手架搞的死去活来，网上许多都是老版本的解答才决定写下这篇踩坑路！希望能帮助到现在的你！</strong></li></ul><hr><h1 id="如有帮助，请收藏本博客，谢谢！"><a href="#如有帮助，请收藏本博客，谢谢！" class="headerlink" title="如有帮助，请收藏本博客，谢谢！"></a><strong>如有帮助，请收藏本博客，谢谢！</strong></h1><p><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg" alt=""></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-18/50059745.jpg" alt=""></p><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>为什么会开始写关于Vue的入坑？对，没有错！就是入坑！不进坑，你怎么才能学的快？！言归正传，最近刚好学校期末结束了，没有那么多门课复习浪费时间了，也正好恰逢大四上结束开了毕设，也正正好好恰逢我的毕设项目是做一个整站，前后端全归我一人来做。所以，我就选了当下国内最火的主流前端框架，也是国内尤大开发的—<strong><a href="https://cn.vuejs.org/" target="_blank" rel="noopener">Vue.js</a>。</strong><br>当前这份vue系列博客只记录我开发过程的一些坑，且不为我最终毕设项目，而是在正式做毕设前的小项目。好了，废话不多讲，进正题！</p><h1 id="安装vue-cli"><a href="#安装vue-cli" class="headerlink" title="安装vue-cli"></a>安装vue-cli</h1><ul><li>首先就是去Vue的<a href="https://cn.vuejs.org/v2/guide/installation.html" target="_blank" rel="noopener">官网</a>去下载Vue脚手架，只要根据以下几步就能正确下载，如果觉得通过npm下载太慢，可以通过用淘宝镜像去下载。<br><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-18/42762674.jpg" alt=""></li><li>在安装过程中，需要你设置关于脚手架的几个依赖，我都选择不安装，以后用到自己再去安装，当然你也可以选择安装，嘿嘿嘿。。。<br><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-18/36868590.jpg" alt=""><h1 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h1></li><li>时间过得好快，刚写完上面的一段博文，就安装好了vue-cli，那么接下来就是安装项目依赖，这样才能运行你的项目。当然你从GitHub上下载别人的项目时，在本地也要先装依赖噢！<br><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-18/93965894.jpg" alt=""></li><li>接下来就是来看看我们之前做的一切有木有成果拉！<br><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-18/19137570.jpg" alt=""></li><li>但如果你之前有接触过以前的脚手架，你会发现当前版本的脚手架感觉Low了好多！只因为我的装X利器没了！什么装X利器？！那就是run项目，会自动打开我的浏览器！现在没了！我还以后怎么向我的小伙伴们装一下！No急，跟我做一步！就能继续拥有这种能力了！</li><li>找到我们的项目目录，然后根据我指出的路径找到这个js文件，里面你会发现有个设置属性，只要改为true就OK啦！赶紧去试试把！<strong>‘./config/index.js’</strong><br><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-18/54903358.jpg" alt=""></li><li>最后只简单介绍下vue-cli的几个文件是干嘛用的,大概了解下，想要详细了解的请自行google。<br><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-18/61734647.jpg" alt=""><h1 id="Version"><a href="#Version" class="headerlink" title="Version"></a>Version</h1><img src="http://p0kkg0pkm.bkt.clouddn.com/18-1-18/37582782.jpg" alt=""><br><strong>一定要看清楚你当前的脚手架版本噢！我就是因为最近的被这个新版脚手架搞的死去活来，才想记录下这篇踩坑路！希望能帮助到现在的你！</strong></li></ul><hr><h1 id="如有帮助，请收藏本博客，谢谢！"><a href="#如有帮助，请收藏本博客，谢谢！" class="headerlink" title="如有帮助，请收藏本博客，谢谢！"></a><strong>如有帮助，请收藏本博客，谢谢！</strong></h1><p><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg" alt=""></p>]]></content>
     
     <summary type="html">
     
@@ -528,35 +554,6 @@
     <updated>2017-12-11T13:50:46.309Z</updated>
     
     <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h3 id="此系列为牛客网剑指Offer系列。"><a href="#此系列为牛客网剑指Offer系列。" class="headerlink" title="此系列为牛客网剑指Offer系列。"></a><strong>此系列为<a href="https://www.nowcoder.com/ta/coding-interviews" target="_blank" rel="noopener">牛客网剑指Offer系列</a>。</strong></h3><p>撰写此博文只为记录点滴与总结。</p><hr><h1 id="从尾到头打印链表"><a href="#从尾到头打印链表" class="headerlink" title="从尾到头打印链表"></a>从尾到头打印链表</h1><p>输入一个链表，从尾到头打印链表每个节点的值。</p><ul><li>什么叫<a href="http://www.baike.com/wiki/%E9%93%BE%E8%A1%A8" target="_blank" rel="noopener">链表</a>，如果不清楚的可以先去了解下，接下来直接进入正题！</li><li><strong>题目：反向打印链表的所有节点。因为链表中每个节点包含的是本身节点的信息(value)和指向下一节点的指针，所以我们需要获取的就是这个value，但是要遍历所有节点，所以我们不可避免的需要用到这个指针。那么我们该如何反向输出整个链表呢？这时候链表的表亲=&gt;数组登场了，JS数组的API非常强大，本身属性方法中就有push、pop、unshift、shift等操作数组方法。既然题目要反向输出，而且链表是从头指向下一级，直到为null才结束，所以我们只要每次取到一个链表节点的时候，把它从数组的头部放入，也就是栈的思想，后进节点的永远在最前面，那么这样数组中就保存了整个反向链表，直接就能输出了！</strong><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*function ListNode(x)&#123;</span></span><br><span class="line"><span class="comment">    this.val = x;</span></span><br><span class="line"><span class="comment">    this.next = null;</span></span><br><span class="line"><span class="comment">&#125;*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printListFromTailToHead</span>(<span class="params">head</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">let</span> arr = []</span><br><span class="line">    <span class="keyword">while</span>(head) &#123;</span><br><span class="line">        arr.unshift(head.val)</span><br><span class="line">        head = head.next</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><hr><h1 id="如有帮助，请收藏本博客，谢谢！"><a href="#如有帮助，请收藏本博客，谢谢！" class="headerlink" title="如有帮助，请收藏本博客，谢谢！"></a><strong>如有帮助，请收藏本博客，谢谢！</strong></h1><p><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;h3 id=&quot;此系列为牛客网剑指Offer系列。&quot;&gt;&lt;a href=&quot;#此系列为牛客网剑指Offer系列。&quot; class=&quot;headerlink
-      
-    
-    </summary>
-    
-      <category term="剑指Offer系列" scheme="http://yoursite.com/categories/%E5%89%91%E6%8C%87Offer%E7%B3%BB%E5%88%97/"/>
-    
-    
-      <category term="JS" scheme="http://yoursite.com/tags/JS/"/>
-    
-      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>剑指Offer第二题：替换空格</title>
-    <link href="http://yoursite.com/2017/12/04/%E5%89%91%E6%8C%87-2/"/>
-    <id>http://yoursite.com/2017/12/04/剑指-2/</id>
-    <published>2017-12-04T14:29:09.000Z</published>
-    <updated>2017-12-11T13:50:40.564Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h3 id="此系列为牛客网剑指Offer系列。"><a href="#此系列为牛客网剑指Offer系列。" class="headerlink" title="此系列为牛客网剑指Offer系列。"></a><strong>此系列为<a href="https://www.nowcoder.com/ta/coding-interviews" target="_blank" rel="noopener">牛客网剑指Offer系列</a>。</strong></h3><p>撰写此博文只为记录点滴与总结。</p><hr><h1 id="替换空格"><a href="#替换空格" class="headerlink" title="替换空格"></a>替换空格</h1><p>请实现一个函数，将一个字符串中的空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。</p><ul><li><strong>JS中有一项非常强大的利器：<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions" target="_blank" rel="noopener">正则</a>，其中有专门对应空格的匹配，和替换的方法replace</strong>。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">replaceSpace</span>(<span class="params">str</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">let</span> reg = <span class="regexp">/\s/g</span></span><br><span class="line">    str = str.replace(reg, <span class="string">"%20"</span>)</span><br><span class="line">    <span class="keyword">return</span> str</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><hr><h1 id="如有帮助，请收藏本博客，谢谢！"><a href="#如有帮助，请收藏本博客，谢谢！" class="headerlink" title="如有帮助，请收藏本博客，谢谢！"></a><strong>如有帮助，请收藏本博客，谢谢！</strong></h1><p><img src="http://p0kkg0pkm.bkt.clouddn.com/17-12-7/4770802.jpg" alt=""></p>]]></content>
     
     <summary type="html">
     
